@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>2026 광운대학교 로봇특성화대학 전공설명회 · Light</title><style>
+:root{
+  --navy:#0b2452;
+  --navy2:#143a78;
+  --blue:#1d63d4;
+  --cyan:#13a8d8;
+  --yellow:#f6c800;
+  --white:#ffffff;
+  --ink:#10284f;
+  --muted:#637a9d;
+  --line:#c9d9ee;
+  --panel:#ffffff;
+  --panel2:#f5f9ff;
+  --green:#159a68;
+  --purple:#7659d6;
+  --orange:#ee7f16;
+}
+*{box-sizing:border-box}
+html,body{
+  margin:0;
+  background:#eef5ff;
+  color:var(--ink);
+  font-family:"Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",Arial,sans-serif;
+  overflow:hidden
+}
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 85% 12%,rgba(29,99,212,.12),transparent 24%),
+    radial-gradient(circle at 12% 86%,rgba(19,168,216,.10),transparent 28%),
+    linear-gradient(135deg,#ffffff 0%,#f4f8fe 46%,#eaf3ff 100%);
+  z-index:-2
+}
+body:after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(37,97,170,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(37,97,170,.055) 1px,transparent 1px);
+  background-size:46px 46px;
+  mask-image:linear-gradient(to bottom,rgba(0,0,0,.55),transparent 86%);
+  z-index:-1
+}
+.deck{height:100vh;width:100vw;position:relative}
+.slide{position:absolute;inset:0;display:none;padding:4.5vh 5vw 7vh}
+.slide.active{display:block;animation:in .36s ease both}
+@keyframes in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.slide-inner{max-width:1500px;margin:0 auto;height:100%;display:flex;flex-direction:column}
+.topline{
+  display:flex;
+  justify-content:space-between;
+  color:#6d86aa;
+  font-size:13px;
+  letter-spacing:.12em
+}
+.brand{font-weight:800}
+.kicker{
+  margin-top:3vh;
+  color:var(--blue);
+  font-weight:900;
+  font-size:clamp(15px,1.25vw,20px)
+}
+h1{
+  font-size:clamp(42px,5vw,78px);
+  line-height:1.05;
+  margin:1.2vh 0 3vh;
+  letter-spacing:-.045em;
+  color:var(--navy)
+}
+h1 span{color:var(--blue)}
+.content{flex:1;display:flex;flex-direction:column;justify-content:center;gap:2.2vh}
+.hero h1{font-size:clamp(48px,6.1vw,96px)}
+.hero h1 span{color:#e2b600}
+.hero-meta,.people-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  max-width:1100px
+}
+.hero-meta>div,.person,.card,.metric,.track,.scholar,.apply-card{
+  background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(245,249,255,.97));
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:24px;
+  box-shadow:0 16px 42px rgba(28,69,124,.10)
+}
+.hero-meta b,.person small{
+  display:block;
+  color:#6d86aa;
+  font-size:14px;
+  margin-bottom:7px
+}
+.hero-meta strong{font-size:clamp(23px,2vw,34px);color:var(--navy)}
+.person strong{font-size:26px;color:var(--navy)}
+.person.wide{grid-column:1/-1}
+.two-col,.three-col,.four-col,.track-grid,.scholar-grid{display:grid;gap:18px}
+.two-col{grid-template-columns:1fr 1fr}
+.three-col{grid-template-columns:repeat(3,1fr)}
+.four-col{grid-template-columns:repeat(4,1fr)}
+.track-grid{grid-template-columns:repeat(4,1fr)}
+.scholar-grid{grid-template-columns:repeat(3,1fr)}
+.card h3,.track h3{font-size:clamp(20px,1.7vw,28px);margin:0 0 16px;color:var(--navy)}
+.card p,.track p{color:#405a7e;font-size:clamp(16px,1.18vw,20px);line-height:1.55}.dept{font-size:.78em;color:#6d86aa;white-space:nowrap}
+.accent{border-color:#7db1f3;background:linear-gradient(145deg,#ffffff,#eff6ff)}
+.statline{
+  padding:13px 0;
+  border-bottom:1px solid rgba(58,111,176,.18);
+  font-size:clamp(18px,1.4vw,24px)
+}
+.statline b{color:var(--blue)}
+.big-number-row{
+  display:grid;
+  grid-template-columns:1fr 1.8fr 1.2fr;
+  gap:18px
+}
+.metric small{color:#6d86aa;display:block;margin-bottom:8px}
+.metric strong{font-size:clamp(20px,1.8vw,30px);color:var(--navy)}
+.statement{
+  font-size:clamp(26px,2.6vw,44px);
+  font-weight:900;
+  line-height:1.35;
+  padding:28px 0;
+  color:var(--navy)
+}
+.statement b{color:var(--blue)}
+.lead{font-size:clamp(22px,2vw,34px);font-weight:800;color:#24466f;margin:0}
+.emoji{font-size:44px;margin-bottom:12px}
+.path-head{
+  display:flex;
+  gap:24px;
+  align-items:center;
+  border-left:5px solid var(--cyan);
+  padding:14px 18px;
+  background:rgba(233,244,255,.92);
+  border-radius:0 14px 14px 0
+}
+.path-head b{font-size:24px;color:var(--navy)}
+.path-head span{color:#5d7394}
+.pill-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.pill-row span{
+  text-align:center;
+  border:1px solid #7ab0e9;
+  border-radius:999px;
+  padding:13px;
+  font-weight:900;
+  color:#145e98;
+  background:rgba(239,248,255,.96)
+}
+.track{min-height:220px}
+.track small{color:#7187a5}
+.track b{display:block;margin-top:20px;color:var(--navy)}
+.track.blue{border-top:5px solid #1d63d4}
+.track.purple{border-top:5px solid var(--purple)}
+.track.cyan{border-top:5px solid var(--cyan)}
+.track.green{border-top:5px solid var(--green)}
+.scholar{text-align:center}
+.scholar small{color:#6d86aa}
+.scholar strong{
+  display:block;
+  font-size:clamp(34px,3.3vw,55px);
+  color:#d9a900;
+  margin:18px 0
+}
+.scholar p{color:#405a7e}
+.footnote,.muted{color:var(--muted);font-size:14px}
+.checklist{display:grid;gap:14px}
+.checklist>div{
+  display:grid;
+  grid-template-columns:74px 1fr;
+  gap:18px;
+  align-items:center;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:18px;
+  background:rgba(255,255,255,.96);
+  box-shadow:0 10px 30px rgba(28,69,124,.08)
+}
+.checklist b{font-size:30px;color:var(--blue)}
+.checklist strong{font-size:22px;color:var(--navy)}
+.checklist span{font-size:18px;line-height:1.55;color:#405a7e}
+.apply-card{
+  display:grid;
+  grid-template-columns:1.25fr 1fr;
+  gap:20px;
+  align-items:center
+}
+.apply-card small{color:#6d86aa;display:block;margin-bottom:8px}
+.apply-card a{
+  font-size:clamp(28px,3vw,48px);
+  font-weight:900;
+  color:var(--blue);
+  text-decoration:none
+}
+.contact p{margin:7px 0;font-size:18px;color:#405a7e}
+.final-message{
+  font-size:clamp(30px,3vw,50px);
+  font-weight:900;
+  margin-top:22px;
+  color:var(--navy)
+}
+.final-message b{color:#d9a900}
+.controls{
+  position:fixed;
+  left:50%;
+  bottom:20px;
+  transform:translateX(-50%);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:rgba(255,255,255,.88);
+  border:1px solid rgba(69,116,173,.25);
+  backdrop-filter:blur(12px);
+  border-radius:999px;
+  padding:8px 10px;
+  z-index:20;
+  box-shadow:0 8px 28px rgba(31,72,126,.16)
+}
+.controls button{
+  border:0;
+  background:#e8f1ff;
+  color:var(--navy);
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  cursor:pointer;
+  font-size:22px
+}
+.controls button:hover{background:#cfe3ff}
+.progress{
+  width:160px;
+  height:5px;
+  background:#d8e6f7;
+  border-radius:999px;
+  overflow:hidden
+}
+.progress i{
+  display:block;
+  height:100%;
+  background:linear-gradient(90deg,var(--blue),#19b6d4,#f0c400);
+  width:0
+}
+.hint{
+  position:fixed;
+  right:25px;
+  bottom:26px;
+  color:#7890af;
+  font-size:12px
+}
+@media(max-width:900px){
+  html,body{overflow:auto}
+  .deck{height:auto}
+  .slide{position:relative;display:none;min-height:100vh;padding:30px 22px 80px}
+  .slide.active{display:block}
+  .two-col,.three-col,.four-col,.track-grid,.scholar-grid,.big-number-row,.hero-meta,.people-grid,.apply-card{grid-template-columns:1fr}
+  .person.wide{grid-column:auto}
+  .pill-row{grid-template-columns:1fr 1fr}
+  .hint{display:none}
+}
+/* Application slide: scan, apply, contact */
+.application-panel{grid-template-columns:220px minmax(0,1.35fr) minmax(260px,1fr);gap:32px;padding:34px;align-items:center}
+.scan-area{display:flex;flex-direction:column;align-items:center;gap:12px}
+.scan-area .apply-qr{width:210px;height:210px;background:white;padding:8px;border-radius:16px}
+.scan-area>span{font-size:13px;color:#637a9d;text-align:center}
+.apply-info{min-width:0}
+.apply-info .apply-label{font-size:14px;color:#1d63d4;font-weight:700;letter-spacing:.03em}
+.apply-info h2{font-size:clamp(24px,2.15vw,34px);line-height:1.4;margin:10px 0 22px;color:#10284f;letter-spacing:-.035em}
+.application-panel .apply-button{display:flex;justify-content:space-between;align-items:center;gap:24px;max-width:330px;padding:17px 22px;border-radius:12px;background:#1d63d4;color:#ffffff;font-size:20px;font-weight:800;text-decoration:none;transition:transform .15s,filter .15s}
+.application-panel .apply-button:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.application-panel a:focus-visible{outline:3px solid var(--cyan);outline-offset:5px}
+.application-url{font-size:12px;color:#637a9d;margin:12px 0 0;overflow-wrap:anywhere}
+.contact-panel{align-self:stretch;display:flex;flex-direction:column;justify-content:center;border-left:1px solid #c9d9ee;padding:22px 0 22px 30px}
+.contact-panel>small{font-size:14px;color:#637a9d;margin:0}
+.contact-panel h3{font-size:19px;line-height:1.55;color:#10284f;margin:12px 0 24px}
+.contact-item{display:flex;flex-direction:column;gap:5px;margin-bottom:16px}
+.contact-item>span{font-size:12px;color:#637a9d}
+.application-panel .contact-item a{font-size:17px;font-weight:600;color:#10284f;text-decoration:none;overflow-wrap:anywhere}
+.application-panel .contact-item a:hover{text-decoration:underline}
+[data-index="12"] .final-message{font-size:clamp(22px,2.3vw,36px);margin-top:12px;text-align:center}
+@media(max-width:1100px) and (min-width:901px){.application-panel{grid-template-columns:170px minmax(0,1fr) minmax(230px,.9fr);gap:22px;padding:24px}.scan-area .apply-qr{width:165px;height:165px}.contact-panel{padding-left:22px}}
+@media(max-width:900px){.application-panel{grid-template-columns:1fr;gap:24px;padding:26px}.scan-area .apply-qr{width:200px;height:200px}.apply-info{text-align:center}.application-panel .apply-button{margin:auto}.contact-panel{border-left:0;border-top:1px solid #c9d9ee;padding:24px 0 0}.contact-panel h3{margin-bottom:18px}}
+
+.application-panel .apply-button{max-width:380px;font-size:clamp(16px,1.35vw,20px);gap:12px}
+.scan-area>span{max-width:210px;line-height:1.5}
+
+.course-name{white-space:nowrap;display:inline-block}
+.course-grid .card p{word-break:keep-all;overflow-wrap:normal}
+.course-dept{white-space:nowrap;display:inline-block}
+
+.faculty-affiliation{font-size:.68em;font-weight:600;white-space:nowrap;color:var(--muted)}
+.metric .participating-departments{font-size:clamp(18px,1.45vw,25px);line-height:1.55;word-break:keep-all}
+.hero h1{word-break:keep-all}
+
+.apply-qr{object-fit:contain;flex-shrink:0}
+
+.lab-location{display:block;font-size:.65em;font-weight:600;color:var(--muted);margin-top:8px;line-height:1.45}
+[data-index="4"] .lead{word-break:keep-all;line-height:1.45}
+</style></head><body><div class="deck"><section class="slide hero" data-index="1"><div class="slide-inner"><div class="topline"><div class="brand">KWANGWOON UNIVERSITY · ROBOTICS-SPECIALIZED UNIVERSITY</div><div class="counter">01 / 13</div></div><div class="kicker">2026 첨단산업 특성화대학 재정지원사업 · 로봇</div><h1>광운대학교 로봇특성화대학사업단 <span>전공설명회</span></h1><div class="content"><div class="hero-meta"><div><b>일시</b><strong>2026. 10. 14. (수) 18:00 ~ 18:30</strong></div><div><b>장소</b><strong>새빛관 101호</strong></div></div><div class="people-grid"><div class="person"><small>사업단장</small><strong>최용훈 <span class="faculty-affiliation">로봇학부 교수</span></strong></div><div class="person"><small>부단장</small><strong>백주훈 <span class="faculty-affiliation">로봇학부 교수</span></strong></div><div class="person wide"><small>산학협력중점교수</small><strong>김율희 · 유대엽 · 신유안</strong></div></div></div></div></section><section class="slide" data-index="2"><div class="slide-inner"><div class="topline"><div class="brand">KWANGWOON UNIVERSITY · ROBOTICS-SPECIALIZED UNIVERSITY</div><div class="counter">02 / 13</div></div><div class="kicker">사업 선정</div><h1>2026년 첨단산업특성화대학 <span>재정지원사업 로봇 분야 선정</span></h1><div class="content"><div class="big-number-row"><div class="metric"><small>주관</small><strong>로봇학부</strong></div><div class="metric"><small>참여학과</small><strong class="participating-departments">정보융합학부 · 소프트웨어학과 · 전기공학과 · 지능형로봇학과</strong></div><div class="metric"><small>사업기간</small><strong>2026.03 ~ 2030.02</strong></div></div><div class="statement">광운대학교가 <b>로봇 전문인재 양성</b>을 위한 국가 전략 사업의 중심에 섭니다.</div></div></div></section><section class="slide" data-index="3"><div class="slide-inner"><div class="topline"><div class="brand">KWANGWOON UNIVERSITY · ROBOTICS-SPECIALIZED UNIVERSITY</div><div class="counter">03 / 13</div></div><div class="kicker">01 · Overview</div><h1>광운대 <span>로봇특성화대학</span> 개요</h1><div class="content"><div class="two-col"><div class="card"><h3>로봇특성화대학이란?</h3><p>정부가 특정 산업분야의 경쟁력 있는 대학을 선정하고 <b>재정·인프라를 지원</b>하는 제도입니다.</p><p class="muted">국가첨단전략산업법 제37조 등 관련 법령과 운영지침에 따라 지원하고 있습니다.</p></div><div class="card accent"><h3>광운대학교 현황</h3><div class="statline"><b>2026년 최초</b> 로봇 분야 선정</div><div class="statline">선정 경쟁률 <b>25 : 3</b></div><div class="statline">4년간 국고 <b>116억원</b> 지원</div><div class="statline">대학·서울시·기업체 추가 지원 연계</div></div></div></div></div></section><section class="slide" data-index="4"><div class="slide-inner"><div class="topline"><div class="brand">KWANGWOON UNIVERSITY · ROBOTICS-SPECIALIZED UNIVERSITY</div><div class="counter">04 / 13</div></div><div class="kicker">02 · Infrastructure</div><h1>40억원 규모 <span>첨단 실험실 구축</span></h1><div class="content"><p class="lead">휴머노이드 · 모바일로봇 · 인공지능 교육을 위한 대규모 실습 인프라를 확충하고 있습니다.</p><div class="three-col"><div class="card iconcard"><div class="emoji">🤖</div><h3>휴머노이드 실험실<small class="lab-location">새빛관 구축 예정</small></h3><p>실습용 휴머노이드 다량 도입</p><p>전신제어·조작·보행 실습</p><p>실제 로봇 기반 프로젝트</p></div><div class="card iconcard"><div class="emoji">🛞</div><h3>모바일로봇 실험실<small class="lab-location">참빛관 308호 - 310호</small></h3><p>자율주행·내비게이션 플랫폼</p><p>센서·제어·관제 실습</p><p>산업·공공안전 응용</p></div><div class="card iconcard"><div class="emoji">🧠</div><h3>AI · GPU 실습 인프라</h3><p>고성능 GPU 서버 및 GPU PC</p><p>딥러닝·Physical AI 실습</p><p>대규모 AI 프로젝트 수행</p></div></div></div></div></section><section class="slide" data-index="5"><div class="slide-inner"><div class="topline"><div class="brand">KWANGWOON UNIVERSITY · ROBOTICS-SPECIALIZED UNIVERSITY</div><div class="counter">05 / 13</div></div><div class="kicker">03 · Pathways</div><h1>나에게 맞는 <span>로봇 전공 트랙</span></h1><div class="content"><div class="track-grid"><div class="track blue"><small>전문 인재</small><h3>로봇학부 주전공</h3><p>로봇학부 소속 학생</p><b>전공 60학점 · 비교과 20점</b></div><div class="track purple"><small>융합 인재</small><h3>휴머노이드 연계전공</h3><p>소프트웨어·정보융합 등</p><b>전공 30학점 · 비교과 15점</b></div><div class="track cyan"><small>융합 인재</small><h3>모바일로봇 연계전공</h3><p>전기공학 등</p><b>전공 30학점 · 비교과 15점</b></div><div class="track green"><small>실무 인재</small><h3>지능형로봇학과 부전공</h3><p>전교생 대상</p><b>전공 21학점 · 비교과 12점</b></div></div></div></div></section><section class="slide" data-index="6"><div class="slide-inner"><div class="topline"><div class="brand">KWANGWOON UNIVERSITY · ROBOTICS-SPECIALIZED UNIVERSITY</div><div class="counter">06 / 13</div></div><div class="kicker">04 · Mobile Robot</div><h1>모바일로봇 <span>연계전공</span></h1><div class="content"><div class="path-head"><b>대상 · 전기공학과</b><span>자율주행·모바일로봇 분야 고급 연계 인재 양성</span></div><div class="three-col"><div class="card"><h3>1~2학년</h3><p>지능형로봇의이해 <span class="dept">(지능형로봇학과)</span></p><p>로봇명사와의만남 <span class="dept">(지능형로봇학과)</span></p><p>기초로봇수학 <span class="dept">(지능형로봇학과)</span></p><p>모바일로봇의이해 <span class="dept">(지능형로봇학과)</span></p><p>로봇기초실습 <span class="dept">(지능형로봇학과)</span></p><p>로봇과상상 <span class="dept">(지능형로봇학과)</span></p><p>전자기학2 <span class="dept">(전기공학과)</span></p></div><div class="card"><h3>3학년</h3><p>로봇프로그래밍 <span class="dept">(지능형로봇학과)</span></p><p>마이크로프로세서응용설계 <span class="dept">(지능형로봇학과)</span></p><p>전기기계1 <span class="dept">(전기공학과)</span></p><p>전자회로응용 <span class="dept">(전기공학과)</span></p><p>전기공학머신러닝실습 <span class="dept">(전기공학과)</span></p><p>AI프로그래밍 <span class="dept">(지능형로봇학과)</span></p><p>제어공학1 <span class="dept">(전기공학과)</span></p><p>전기기계2 <span class="dept">(전기공학과)</span></p></div><div class="card"><h3>4학년</h3><p>로봇비전응용 <span class="dept">(지능형로봇학과)</span></p><p>자연어처리기초및응용 <span class="dept">(지능형로봇학과)</span></p><p>피지컬AI <span class="dept">(로봇학부)</span></p><p>로봇기업경영 <span class="dept">(지능형로봇학과)</span></p><p>지능형드론제어 <span class="dept">(지능형로봇학과)</span></p><p>로봇내비게이션 <span class="dept">(로봇학부)</span></p><p>전기자동차공학 <span class="dept">(전기공학과)</span></p><p>인공지능응용 <span class="dept">(전기공학과)</span></p></div></div><div class="pill-row"><span>전기·제어 시스템</span><span>임베디드·센서</span><span>자율주행 내비게이션</span><span>드론·EV 응용</span></div></div></div></section><section class="slide" data-index="7"><div class="slide-inner"><div class="topline"><div class="brand">KWANGWOON UNIVERSITY · ROBOTICS-SPECIALIZED UNIVERSITY</div><div class="counter">07 / 13</div></div><div class="kicker">05 · Humanoid</div><h1>휴머노이드 <span>연계전공</span></h1><div class="content"><div class="path-head"><b>대상 · 소프트웨어학부 · 정보융합학부</b><span>Physical AI와 휴머노이드 제어를 연결하는 고급 융합 인재 양성</span></div><div class="three-col"><div class="card"><h3>1~2학년</h3><p>지능형로봇의이해 <span class="dept">(지능형로봇학과)</span></p><p>로봇명사와의만남 <span class="dept">(지능형로봇학과)</span></p><p>휴머노이드의이해 <span class="dept">(지능형로봇학과)</span></p><p>기초로봇설계 <span class="dept">(지능형로봇학과)</span></p><p>로봇과상상 <span class="dept">(지능형로봇학과)</span></p><p>데이터사이언스개론 <span class="dept">(지능형로봇학과)</span></p><p>시스템소프트웨어 <span class="dept">(소프트웨어학부)</span></p></div><div class="card"><h3>3학년</h3><p>로봇프로그래밍 <span class="dept">(지능형로봇학과)</span></p><p>IoT시스템설계및실습 <span class="dept">(정보융합학부)</span></p><p>데이터베이스 <span class="dept">(소프트웨어학부, 정보융합학부)</span></p><p>AI프로그래밍 <span class="dept">(지능형로봇학과)</span></p><p>빅데이터알고리즘 <span class="dept">(정보융합학부)</span></p><p>Physical AI 실습 <span class="dept">(정보융합학부)</span></p><p>인공지능 <span class="dept">(소프트웨어학부)</span></p><p>컴퓨터비전 <span class="dept">(소프트웨어학부)</span></p></div><div class="card"><h3>4학년</h3><p>자연어처리기초및응용 <span class="dept">(지능형로봇학과)</span></p><p>딥러닝 <span class="dept">(인융대공통)</span></p><p>피지컬AI <span class="dept">(로봇학부)</span></p><p>딥러닝프로그래밍 <span class="dept">(정보융합학부)</span></p><p>소프트웨어공학 <span class="dept">(소프트웨어학부)</span></p><p>로봇기업경영 <span class="dept">(지능형로봇학과)</span></p><p>협동로봇실습 <span class="dept">(지능형로봇학과)</span></p><p>인공지능응용 <span class="dept">(정보융합학부)</span></p><p>휴머노이드전신제어 <span class="dept">(로봇학부)</span></p><p>온디바이스인공지능 <span class="dept">(로봇학부)</span></p></div></div><div class="pill-row"><span>로봇 소프트웨어</span><span>인지·비전 AI</span><span>Physical AI 실습</span><span>휴머노이드 전신제어</span></div></div></div></section><section class="slide" data-index="8"><div class="slide-inner"><div class="topline"><div class="brand">KWANGWOON UNIVERSITY · ROBOTICS-SPECIALIZED UNIVERSITY</div><div class="counter">08 / 13</div></div><div class="kicker">06 · Minor</div><h1>지능형로봇학과 <span>부전공</span></h1><div class="content"><div class="path-head"><b>대상 · 전교생</b><span>로봇 융합역량을 키우는 실무형 부전공</span></div><div class="four-col"><div class="card"><h3>1학년</h3><p>지능형로봇의이해 <span class="dept">(지능형로봇학과)</span></p><p>로봇명사와의만남 <span class="dept">(지능형로봇학과)</span></p><p>기초로봇수학 <span class="dept">(지능형로봇학과)</span></p></div><div class="card"><h3>2학년</h3><p>모바일로봇의이해 <span class="dept">(지능형로봇학과)</span></p><p>로봇과상상 <span class="dept">(지능형로봇학과)</span></p><p>로봇기초실습 <span class="dept">(지능형로봇학과)</span></p><p>기초로봇설계 <span class="dept">(지능형로봇학과)</span></p><p>휴머노이드의이해 <span class="dept">(지능형로봇학과)</span></p><p>데이터사이언스개론 <span class="dept">(지능형로봇학과)</span></p></div><div class="card"><h3>3학년</h3><p>마이크로프로세서응용 <span class="dept">(지능형로봇학과)</span></p><p>로봇프로그래밍 <span class="dept">(지능형로봇학과)</span></p><p>기술과경영 <span class="dept">(지능형로봇학과)</span></p><p>AI프로그래밍 <span class="dept">(지능형로봇학과)</span></p><p>머신러닝의이해 <span class="dept">(지능형로봇학과)</span></p></div><div class="card"><h3>4학년</h3><p>로봇비전응용 <span class="dept">(지능형로봇학과)</span></p><p>자연어처리기초및응용 <span class="dept">(지능형로봇학과)</span></p><p>지능형드론제어 <span class="dept">(지능형로봇학과)</span></p><p>로봇기업경영 <span class="dept">(지능형로봇학과)</span></p><p>협동로봇실습 <span class="dept">(지능형로봇학과)</span></p></div></div></div></div></section><section class="slide" data-index="9"><div class="slide-inner"><div class="topline"><div class="brand">KWANGWOON UNIVERSITY · ROBOTICS-SPECIALIZED UNIVERSITY</div><div class="counter">09 / 13</div></div><div class="kicker">07 · Scholarship</div><h1>사업 <span>지원 혜택</span></h1><div class="content"><div class="scholar-grid"><div class="scholar"><small>로봇학부 주전공</small><strong>최대 300만원</strong><p>단계별 이수에 따른 장학금 지급 예정</p></div><div class="scholar"><small>휴머노이드 · 모바일로봇 연계전공</small><strong>최대 200만원</strong><p>연계전공 이수 단계별 장학금 지급 예정</p></div><div class="scholar"><small>지능형로봇학과 부전공</small><strong>최대 200만원</strong><p>부전공 이수 단계별 장학금 지급 예정</p></div></div><p class="footnote">※ 장학금 금액과 지급 기준은 예산 및 사업 운영 상황에 따라 변경될 수 있습니다.</p></div></div></section><section class="slide" data-index="10"><div class="slide-inner"><div class="topline"><div class="brand">KWANGWOON UNIVERSITY · ROBOTICS-SPECIALIZED UNIVERSITY</div><div class="counter">10 / 13</div></div><div class="kicker">08 · Research Internship</div><h1>연구실 <span>인턴십</span></h1><div class="content"><p class="lead">연구실 참여를 통해 로봇·AI 분야의 실무 연구 경험을 쌓을 수 있습니다.</p><div class="three-col"><div class="card"><h3>연구실 인턴십</h3><div class="statline">운영 연구실 <b>19개</b></div><p>로봇·AI 분야 연구실 인턴십 운영</p></div><div class="card"><h3>재료비 신청</h3><div class="statline">신청 <b>25개 팀</b></div><p>연구실 인턴십 관련 재료비 신청</p></div><div class="card accent"><h3>재료비 지원</h3><div class="statline">1인당 <b>25만원</b></div><div class="statline">팀당 최대 <b>100만원</b></div></div></div></div></div></section><section class="slide" data-index="11"><div class="slide-inner"><div class="topline"><div class="brand">KWANGWOON UNIVERSITY · ROBOTICS-SPECIALIZED UNIVERSITY</div><div class="counter">11 / 13</div></div><div class="kicker">09 · Beyond Class</div><h1>교실 밖까지 이어지는 <span>성장 지원</span></h1><div class="content"><div class="three-col"><div class="card iconcard"><div class="emoji">🌍</div><h3>해외 전시회</h3><p>우수 참여 학생에게 글로벌 로봇·AI 전시회 참여 기회 제공</p></div><div class="card iconcard"><div class="emoji">🏆</div><h3>학술·경진 활동</h3><p>국내외 학술대회, 전시회, 경진대회 및 전문교육 프로그램 지원</p></div><div class="card iconcard"><div class="emoji">🤝</div><h3>산학협력·멘토링</h3><p>산학협력 프로젝트, 산학인턴십, KW-IC 심화교육과정, 지도교수 매칭</p></div></div></div></div></section><section class="slide" data-index="12"><div class="slide-inner"><div class="topline"><div class="brand">KWANGWOON UNIVERSITY · ROBOTICS-SPECIALIZED UNIVERSITY</div><div class="counter">12 / 13</div></div><div class="kicker">10 · Before You Apply</div><h1>신청 전 <span>꼭 확인하세요</span></h1><div class="content"><div class="checklist"><div><b>01</b><span><strong>로봇학부 주전공</strong><br/>2학년 학생은 적극 신청 · 3학년도 이수 가능학점 확인 후 신청</span></div><div><b>02</b><span><strong>지능형로봇학과 부전공</strong><br/>교내 다전공 신청기간에 반드시 신청</span></div><div><b>03</b><span><strong>휴머노이드 · 모바일로봇 연계전공</strong><br/>교내 다전공 신청기간에 반드시 신청</span></div></div></div></div></section><section class="slide" data-index="13"><div class="slide-inner"><div class="topline"><div class="brand">KWANGWOON UNIVERSITY · ROBOTICS-SPECIALIZED UNIVERSITY</div><div class="counter">13 / 13</div></div><div class="kicker">11 · Apply</div><h1>지금 바로 <span>신청하세요</span></h1><div class="content"><div class="apply-card application-panel"><div class="scan-area"><img alt="참여 신청 QR코드" class="apply-qr" src="data:image/png;base64,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"/><span>QR코드를 스캔하여 참여 신청하세요.</span></div><div class="apply-info"><small class="apply-label">로봇특성화대학 참여 신청</small><a class="apply-button" href="https://forms.gle/MyG3JE7T8VAcqQvu5" rel="noopener noreferrer" target="_blank">로봇특성화대학 참여 신청 <span aria-hidden="true">↗</span></a><p class="application-url">forms.gle/MyG3JE7T8VAcqQvu5</p></div><div class="contact contact-panel"><small>문의처</small><h3>광운대학교<br>로봇특성화대학사업단</br></h3><div class="contact-item"><span>전화</span><a href="tel:029405755">02-940-5755~5756</a></div><div class="contact-item"><span>이메일</span><a href="mailto:ai.robot@kw.ac.kr">ai.robot@kw.ac.kr</a></div></div></div><div class="final-message">로봇과 Physical AI의 미래를 <b>광운대학교에서 시작하세요.</b></div></div></div></section></div><div class="controls"><button id="prev">‹</button><div class="progress"><i id="bar"></i></div><button id="next">›</button></div><div class="hint">← → 방향키 · Space로 탐색 · F 전체화면</div><script>const slides=[...document.querySelectorAll('.slide')];let idx=0;function show(n){idx=(n+slides.length)%slides.length;slides.forEach((s,i)=>s.classList.toggle('active',i===idx));document.getElementById('bar').style.width=((idx+1)/slides.length*100)+'%';location.hash='slide-'+(idx+1)}document.getElementById('prev').onclick=()=>show(idx-1);document.getElementById('next').onclick=()=>show(idx+1);addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();show(idx+1)}if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){e.preventDefault();show(idx-1)}if(e.key==='Home')show(0);if(e.key==='End')show(slides.length-1);if(e.key.toLowerCase()==='f')document.documentElement.requestFullscreen?.()});const m=location.hash.match(/slide-(\d+)/);if(m)idx=Math.max(0,Math.min(slides.length-1,Number(m[1])-1));show(idx);</script></body></html>
