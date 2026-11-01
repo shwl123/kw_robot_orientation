@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>2026 광운대학교 로봇특성화대학 전공설명회 · Light</title><style>
+:root{
+  --navy:#0b2452;
+  --navy2:#143a78;
+  --blue:#1d63d4;
+  --cyan:#13a8d8;
+  --yellow:#f6c800;
+  --white:#ffffff;
+  --ink:#10284f;
+  --muted:#637a9d;
+  --line:#c9d9ee;
+  --panel:#ffffff;
+  --panel2:#f5f9ff;
+  --green:#159a68;
+  --purple:#7659d6;
+  --orange:#ee7f16;
+}
+*{box-sizing:border-box}
+html,body{
+  margin:0;
+  background:#eef5ff;
+  color:var(--ink);
+  font-family:"Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",Arial,sans-serif;
+  overflow:hidden
+}
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 85% 12%,rgba(29,99,212,.12),transparent 24%),
+    radial-gradient(circle at 12% 86%,rgba(19,168,216,.10),transparent 28%),
+    linear-gradient(135deg,#ffffff 0%,#f4f8fe 46%,#eaf3ff 100%);
+  z-index:-2
+}
+body:after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(37,97,170,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(37,97,170,.055) 1px,transparent 1px);
+  background-size:46px 46px;
+  mask-image:linear-gradient(to bottom,rgba(0,0,0,.55),transparent 86%);
+  z-index:-1
+}
+.deck{height:100vh;width:100vw;position:relative}
+.slide{position:absolute;inset:0;display:none;padding:4.5vh 5vw 7vh}
+.slide.active{display:block;animation:in .36s ease both}
+@keyframes in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.slide-inner{max-width:1500px;margin:0 auto;height:100%;display:flex;flex-direction:column}
+.topline{
+  display:flex;
+  justify-content:space-between;
+  color:#6d86aa;
+  font-size:13px;
+  letter-spacing:.12em
+}
+.brand{font-weight:800}
+.kicker{
+  margin-top:3vh;
+  color:var(--blue);
+  font-weight:900;
+  font-size:clamp(15px,1.25vw,20px)
+}
+h1{
+  font-size:clamp(42px,5vw,78px);
+  line-height:1.05;
+  margin:1.2vh 0 3vh;
+  letter-spacing:-.045em;
+  color:var(--navy)
+}
+h1 span{color:var(--blue)}
+.content{flex:1;display:flex;flex-direction:column;justify-content:center;gap:2.2vh}
+.hero h1{font-size:clamp(48px,6.1vw,96px)}
+.hero h1 span{color:#e2b600}
+.hero-meta,.people-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  max-width:1100px
+}
+.hero-meta>div,.person,.card,.metric,.track,.scholar,.apply-card{
+  background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(245,249,255,.97));
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:24px;
+  box-shadow:0 16px 42px rgba(28,69,124,.10)
+}
+.hero-meta b,.person small{
+  display:block;
+  color:#6d86aa;
+  font-size:14px;
+  margin-bottom:7px
+}
+.hero-meta strong{font-size:clamp(23px,2vw,34px);color:var(--navy)}
+.person strong{font-size:26px;color:var(--navy)}
+.person.wide{grid-column:1/-1}
+.two-col,.three-col,.four-col,.track-grid,.scholar-grid{display:grid;gap:18px}
+.two-col{grid-template-columns:1fr 1fr}
+.three-col{grid-template-columns:repeat(3,1fr)}
+.four-col{grid-template-columns:repeat(4,1fr)}
+.track-grid{grid-template-columns:repeat(4,1fr)}
+.scholar-grid{grid-template-columns:repeat(3,1fr)}
+.card h3,.track h3{font-size:clamp(20px,1.7vw,28px);margin:0 0 16px;color:var(--navy)}
+.card p,.track p{color:#405a7e;font-size:clamp(16px,1.18vw,20px);line-height:1.55}.dept{font-size:.78em;color:#6d86aa;white-space:nowrap}
+.accent{border-color:#7db1f3;background:linear-gradient(145deg,#ffffff,#eff6ff)}
+.statline{
+  padding:13px 0;
+  border-bottom:1px solid rgba(58,111,176,.18);
+  font-size:clamp(18px,1.4vw,24px)
+}
+.statline b{color:var(--blue)}
+.big-number-row{
+  display:grid;
+  grid-template-columns:1fr 1.8fr 1.2fr;
+  gap:18px
+}
+.metric small{color:#6d86aa;display:block;margin-bottom:8px}
+.metric strong{font-size:clamp(20px,1.8vw,30px);color:var(--navy)}
+.statement{
+  font-size:clamp(26px,2.6vw,44px);
+  font-weight:900;
+  line-height:1.35;
+  padding:28px 0;
+  color:var(--navy)
+}
+.statement b{color:var(--blue)}
+.lead{font-size:clamp(22px,2vw,34px);font-weight:800;color:#24466f;margin:0}
+.emoji{font-size:44px;margin-bottom:12px}
+.path-head{
+  display:flex;
+  gap:24px;
+  align-items:center;
+  border-left:5px solid var(--cyan);
+  padding:14px 18px;
+  background:rgba(233,244,255,.92);
+  border-radius:0 14px 14px 0
+}
+.path-head b{font-size:24px;color:var(--navy)}
+.path-head span{color:#5d7394}
+.pill-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.pill-row span{
+  text-align:center;
+  border:1px solid #7ab0e9;
+  border-radius:999px;
+  padding:13px;
+  font-weight:900;
+  color:#145e98;
+  background:rgba(239,248,255,.96)
+}
+.track{min-height:220px}
+.track small{color:#7187a5}
+.track b{display:block;margin-top:20px;color:var(--navy)}
+.track.blue{border-top:5px solid #1d63d4}
+.track.purple{border-top:5px solid var(--purple)}
+.track.cyan{border-top:5px solid var(--cyan)}
+.track.green{border-top:5px solid var(--green)}
+.scholar{text-align:center}
+.scholar small{color:#6d86aa}
+.scholar strong{
+  display:block;
+  font-size:clamp(34px,3.3vw,55px);
+  color:#d9a900;
+  margin:18px 0
+}
+.scholar p{color:#405a7e}
+.footnote,.muted{color:var(--muted);font-size:14px}
+.checklist{display:grid;gap:14px}
+.checklist>div{
+  display:grid;
+  grid-template-columns:74px 1fr;
+  gap:18px;
+  align-items:center;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:18px;
+  background:rgba(255,255,255,.96);
+  box-shadow:0 10px 30px rgba(28,69,124,.08)
+}
+.checklist b{font-size:30px;color:var(--blue)}
+.checklist strong{font-size:22px;color:var(--navy)}
+.checklist span{font-size:18px;line-height:1.55;color:#405a7e}
+.apply-card{
+  display:grid;
+  grid-template-columns:1.25fr 1fr;
+  gap:20px;
+  align-items:center
+}
+.apply-card small{color:#6d86aa;display:block;margin-bottom:8px}
+.apply-card a{
+  font-size:clamp(28px,3vw,48px);
+  font-weight:900;
+  color:var(--blue);
+  text-decoration:none
+}
+.contact p{margin:7px 0;font-size:18px;color:#405a7e}
+.final-message{
+  font-size:clamp(30px,3vw,50px);
+  font-weight:900;
+  margin-top:22px;
+  color:var(--navy)
+}
+.final-message b{color:#d9a900}
+.controls{
+  position:fixed;
+  left:50%;
+  bottom:20px;
+  transform:translateX(-50%);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:rgba(255,255,255,.88);
+  border:1px solid rgba(69,116,173,.25);
+  backdrop-filter:blur(12px);
+  border-radius:999px;
+  padding:8px 10px;
+  z-index:20;
+  box-shadow:0 8px 28px rgba(31,72,126,.16)
+}
+.controls button{
+  border:0;
+  background:#e8f1ff;
+  color:var(--navy);
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  cursor:pointer;
+  font-size:22px
+}
+.controls button:hover{background:#cfe3ff}
+.progress{
+  width:160px;
+  height:5px;
+  background:#d8e6f7;
+  border-radius:999px;
+  overflow:hidden
+}
+.progress i{
+  display:block;
+  height:100%;
+  background:linear-gradient(90deg,var(--blue),#19b6d4,#f0c400);
+  width:0
+}
+.hint{
+  position:fixed;
+  right:25px;
+  bottom:26px;
+  color:#7890af;
+  font-size:12px
+}
+@media(max-width:900px){
+  html,body{overflow:auto}
+  .deck{height:auto}
+  .slide{position:relative;display:none;min-height:100vh;padding:30px 22px 80px}
+  .slide.active{display:block}
+  .two-col,.three-col,.four-col,.track-grid,.scholar-grid,.big-number-row,.hero-meta,.people-grid,.apply-card{grid-template-columns:1fr}
+  .person.wide{grid-column:auto}
+  .pill-row{grid-template-columns:1fr 1fr}
+  .hint{display:none}
+}
+/* Application slide: scan, apply, contact */
+.application-panel{grid-template-columns:220px minmax(0,1.35fr) minmax(260px,1fr);gap:32px;padding:34px;align-items:center}
+.scan-area{display:flex;flex-direction:column;align-items:center;gap:12px}
+.scan-area .apply-qr{display:block;width:210px;height:210px;max-width:100%;aspect-ratio:1/1;object-fit:contain;background:#fff;padding:8px;border-radius:16px;box-sizing:border-box}
+.scan-area>span{font-size:13px;color:#637a9d;text-align:center}
+.apply-info{min-width:0}
+.apply-info .apply-label{font-size:14px;color:#1d63d4;font-weight:700;letter-spacing:.03em}
+.apply-info h2{font-size:clamp(24px,2.15vw,34px);line-height:1.4;margin:10px 0 22px;color:#10284f;letter-spacing:-.035em}
+.application-panel .apply-button{display:flex;justify-content:space-between;align-items:center;gap:24px;max-width:330px;padding:17px 22px;border-radius:12px;background:#1d63d4;color:#ffffff;font-size:20px;font-weight:800;text-decoration:none;transition:transform .15s,filter .15s}
+.application-panel .apply-button:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.application-panel a:focus-visible{outline:3px solid var(--cyan);outline-offset:5px}
+.application-url{font-size:12px;color:#637a9d;margin:12px 0 0;overflow-wrap:anywhere}
+.contact-panel{align-self:stretch;display:flex;flex-direction:column;justify-content:center;border-left:1px solid #c9d9ee;padding:22px 0 22px 30px}
+.contact-panel>small{font-size:14px;color:#637a9d;margin:0}
+.contact-panel h3{font-size:19px;line-height:1.55;color:#10284f;margin:12px 0 24px}
+.contact-item{display:flex;flex-direction:column;gap:5px;margin-bottom:16px}
+.contact-item>span{font-size:12px;color:#637a9d}
+.application-panel .contact-item a{font-size:17px;font-weight:600;color:#10284f;text-decoration:none;overflow-wrap:anywhere}
+.application-panel .contact-item a:hover{text-decoration:underline}
+[data-index="12"] .final-message{font-size:clamp(22px,2.3vw,36px);margin-top:12px;text-align:center}
+@media(max-width:1100px) and (min-width:901px){.application-panel{grid-template-columns:170px minmax(0,1fr) minmax(230px,.9fr);gap:22px;padding:24px}.scan-area .apply-qr{width:165px;height:165px;max-width:100%;object-fit:contain}.contact-panel{padding-left:22px}}
+@media(max-width:900px){.application-panel{grid-template-columns:1fr;gap:24px;padding:26px}.scan-area .apply-qr{width:200px;height:200px;max-width:100%;object-fit:contain}.apply-info{text-align:center}.application-panel .apply-button{margin:auto}.contact-panel{border-left:0;border-top:1px solid #c9d9ee;padding:24px 0 0}.contact-panel h3{margin-bottom:18px}}
+
+.application-panel .apply-button{max-width:380px;font-size:clamp(16px,1.35vw,20px);gap:12px}
+.scan-area>span{max-width:210px;line-height:1.5}
+
+.course-name{white-space:nowrap;display:inline-block}
+.course-grid .card p{word-break:keep-all;overflow-wrap:normal}
+.course-dept{white-space:nowrap;display:inline-block}
+
+.faculty-affiliation{font-size:.68em;font-weight:600;white-space:nowrap;color:var(--muted)}
+.metric .participating-departments{font-size:clamp(18px,1.45vw,25px);line-height:1.55;word-break:keep-all}
+.hero h1{word-break:keep-all}
+
+.apply-qr{object-fit:contain;flex-shrink:0}
+
+.lab-location{display:block;font-size:.65em;font-weight:600;color:var(--muted);margin-top:8px;line-height:1.45}
+[data-index="4"] .lead{word-break:keep-all;line-height:1.45}
+</style></head><body><div class="deck"><section class="slide hero" data-index="1"><div class="slide-inner"><div class="topline"><div class="brand">KWANGWOON UNIVERSITY · ROBOTICS-SPECIALIZED UNIVERSITY</div><div class="counter">01 / 13</div></div><div class="kicker">2026 첨단산업 특성화대학 재정지원사업 · 로봇</div><h1>광운대학교 로봇특성화대학사업단 <span>전공설명회</span></h1><div class="content"><div class="hero-meta"><div><b>일시</b><strong>2026. 10. 14. (수) 18:00 ~ 18:30</strong></div><div><b>장소</b><strong>새빛관 101호</strong></div></div><div class="people-grid"><div class="person"><small>사업단장</small><strong>최용훈 <span class="faculty-affiliation">로봇학부 교수</span></strong></div><div class="person"><small>부단장</small><strong>백주훈 <span class="faculty-affiliation">로봇학부 교수</span></strong></div><div class="person wide"><small>산학협력중점교수</small><strong>김율희 · 유대엽 · 신유안</strong></div></div></div></div></section><section class="slide" data-index="2"><div class="slide-inner"><div class="topline"><div class="brand">KWANGWOON UNIVERSITY · ROBOTICS-SPECIALIZED UNIVERSITY</div><div class="counter">02 / 13</div></div><div class="kicker">사업 선정</div><h1>2026년 첨단산업특성화대학 <span>재정지원사업 로봇 분야 선정</span></h1><div class="content"><div class="big-number-row"><div class="metric"><small>주관</small><strong>로봇학부</strong></div><div class="metric"><small>참여학과</small><strong class="participating-departments">정보융합학부 · 소프트웨어학과 · 전기공학과 · 지능형로봇학과</strong></div><div class="metric"><small>사업기간</small><strong>2026.03 ~ 2030.02</strong></div></div><div class="statement">광운대학교가 <b>로봇 전문인재 양성</b>을 위한 국가 전략 사업의 중심에 섭니다.</div></div></div></section><section class="slide" data-index="3"><div class="slide-inner"><div class="topline"><div class="brand">KWANGWOON UNIVERSITY · ROBOTICS-SPECIALIZED UNIVERSITY</div><div class="counter">03 / 13</div></div><div class="kicker">01 · Overview</div><h1>광운대 <span>로봇특성화대학</span> 개요</h1><div class="content"><div class="two-col"><div class="card"><h3>로봇특성화대학이란?</h3><p>정부가 특정 산업분야의 경쟁력 있는 대학을 선정하고 <b>재정·인프라를 지원</b>하는 제도입니다.</p><p class="muted">국가첨단전략산업법 제37조 등 관련 법령과 운영지침에 따라 지원하고 있습니다.</p></div><div class="card accent"><h3>광운대학교 현황</h3><div class="statline"><b>2026년 최초</b> 로봇 분야 선정</div><div class="statline">선정 경쟁률 <b>25 : 3</b></div><div class="statline">4년간 국고 <b>116억원</b> 지원</div><div class="statline">대학·서울시·기업체 추가 지원 연계</div></div></div></div></div></section><section class="slide" data-index="4"><div class="slide-inner"><div class="topline"><div class="brand">KWANGWOON UNIVERSITY · ROBOTICS-SPECIALIZED UNIVERSITY</div><div class="counter">04 / 13</div></div><div class="kicker">02 · Infrastructure</div><h1>40억원 규모 <span>첨단 실험실 구축</span></h1><div class="content"><p class="lead">휴머노이드 · 모바일로봇 · 인공지능 교육을 위한 대규모 실습 인프라를 확충하고 있습니다.</p><div class="three-col"><div class="card iconcard"><div class="emoji">🤖</div><h3>휴머노이드 실험실<small class="lab-location">새빛관 구축 예정</small></h3><p>실습용 휴머노이드 다량 도입</p><p>전신제어·조작·보행 실습</p><p>실제 로봇 기반 프로젝트</p></div><div class="card iconcard"><div class="emoji">🛞</div><h3>모바일로봇 실험실<small class="lab-location">참빛관 308호 - 310호</small></h3><p>자율주행·내비게이션 플랫폼</p><p>센서·제어·관제 실습</p><p>산업·공공안전 응용</p></div><div class="card iconcard"><div class="emoji">🧠</div><h3>AI · GPU 실습 인프라</h3><p>고성능 GPU 서버 및 GPU PC</p><p>딥러닝·Physical AI 실습</p><p>대규모 AI 프로젝트 수행</p></div></div></div></div></section><section class="slide" data-index="5"><div class="slide-inner"><div class="topline"><div class="brand">KWANGWOON UNIVERSITY · ROBOTICS-SPECIALIZED UNIVERSITY</div><div class="counter">05 / 13</div></div><div class="kicker">03 · Pathways</div><h1>나에게 맞는 <span>로봇 전공 트랙</span></h1><div class="content"><div class="track-grid"><div class="track blue"><small>전문 인재</small><h3>로봇학부 주전공</h3><p>로봇학부 소속 학생</p><b>전공 60학점 · 비교과 20점</b></div><div class="track purple"><small>융합 인재</small><h3>휴머노이드 연계전공</h3><p>소프트웨어·정보융합 등</p><b>전공 30학점 · 비교과 15점</b></div><div class="track cyan"><small>융합 인재</small><h3>모바일로봇 연계전공</h3><p>전기공학 등</p><b>전공 30학점 · 비교과 15점</b></div><div class="track green"><small>실무 인재</small><h3>지능형로봇학과 부전공</h3><p>전교생 대상</p><b>전공 21학점 · 비교과 12점</b></div></div></div></div></section><section class="slide" data-index="6"><div class="slide-inner"><div class="topline"><div class="brand">KWANGWOON UNIVERSITY · ROBOTICS-SPECIALIZED UNIVERSITY</div><div class="counter">06 / 13</div></div><div class="kicker">04 · Mobile Robot</div><h1>모바일로봇 <span>연계전공</span></h1><div class="content"><div class="path-head"><b>대상 · 전기공학과</b><span>자율주행·모바일로봇 분야 고급 연계 인재 양성</span></div><div class="three-col"><div class="card"><h3>1~2학년</h3><p>지능형로봇의이해 <span class="dept">(지능형로봇학과)</span></p><p>로봇명사와의만남 <span class="dept">(지능형로봇학과)</span></p><p>기초로봇수학 <span class="dept">(지능형로봇학과)</span></p><p>모바일로봇의이해 <span class="dept">(지능형로봇학과)</span></p><p>로봇기초실습 <span class="dept">(지능형로봇학과)</span></p><p>로봇과상상 <span class="dept">(지능형로봇학과)</span></p><p>전자기학2 <span class="dept">(전기공학과)</span></p></div><div class="card"><h3>3학년</h3><p>로봇프로그래밍 <span class="dept">(지능형로봇학과)</span></p><p>마이크로프로세서응용설계 <span class="dept">(지능형로봇학과)</span></p><p>전기기계1 <span class="dept">(전기공학과)</span></p><p>전자회로응용 <span class="dept">(전기공학과)</span></p><p>전기공학머신러닝실습 <span class="dept">(전기공학과)</span></p><p>AI프로그래밍 <span class="dept">(지능형로봇학과)</span></p><p>제어공학1 <span class="dept">(전기공학과)</span></p><p>전기기계2 <span class="dept">(전기공학과)</span></p></div><div class="card"><h3>4학년</h3><p>로봇비전응용 <span class="dept">(지능형로봇학과)</span></p><p>자연어처리기초및응용 <span class="dept">(지능형로봇학과)</span></p><p>피지컬AI <span class="dept">(로봇학부)</span></p><p>로봇기업경영 <span class="dept">(지능형로봇학과)</span></p><p>지능형드론제어 <span class="dept">(지능형로봇학과)</span></p><p>로봇내비게이션 <span class="dept">(로봇학부)</span></p><p>전기자동차공학 <span class="dept">(전기공학과)</span></p><p>인공지능응용 <span class="dept">(전기공학과)</span></p></div></div><div class="pill-row"><span>전기·제어 시스템</span><span>임베디드·센서</span><span>자율주행 내비게이션</span><span>드론·EV 응용</span></div></div></div></section><section class="slide" data-index="7"><div class="slide-inner"><div class="topline"><div class="brand">KWANGWOON UNIVERSITY · ROBOTICS-SPECIALIZED UNIVERSITY</div><div class="counter">07 / 13</div></div><div class="kicker">05 · Humanoid</div><h1>휴머노이드 <span>연계전공</span></h1><div class="content"><div class="path-head"><b>대상 · 소프트웨어학부 · 정보융합학부</b><span>Physical AI와 휴머노이드 제어를 연결하는 고급 융합 인재 양성</span></div><div class="three-col"><div class="card"><h3>1~2학년</h3><p>지능형로봇의이해 <span class="dept">(지능형로봇학과)</span></p><p>로봇명사와의만남 <span class="dept">(지능형로봇학과)</span></p><p>휴머노이드의이해 <span class="dept">(지능형로봇학과)</span></p><p>기초로봇설계 <span class="dept">(지능형로봇학과)</span></p><p>로봇과상상 <span class="dept">(지능형로봇학과)</span></p><p>데이터사이언스개론 <span class="dept">(지능형로봇학과)</span></p><p>시스템소프트웨어 <span class="dept">(소프트웨어학부)</span></p></div><div class="card"><h3>3학년</h3><p>로봇프로그래밍 <span class="dept">(지능형로봇학과)</span></p><p>IoT시스템설계및실습 <span class="dept">(정보융합학부)</span></p><p>데이터베이스 <span class="dept">(소프트웨어학부, 정보융합학부)</span></p><p>AI프로그래밍 <span class="dept">(지능형로봇학과)</span></p><p>빅데이터알고리즘 <span class="dept">(정보융합학부)</span></p><p>Physical AI 실습 <span class="dept">(정보융합학부)</span></p><p>인공지능 <span class="dept">(소프트웨어학부)</span></p><p>컴퓨터비전 <span class="dept">(소프트웨어학부)</span></p></div><div class="card"><h3>4학년</h3><p>자연어처리기초및응용 <span class="dept">(지능형로봇학과)</span></p><p>딥러닝 <span class="dept">(인융대공통)</span></p><p>피지컬AI <span class="dept">(로봇학부)</span></p><p>딥러닝프로그래밍 <span class="dept">(정보융합학부)</span></p><p>소프트웨어공학 <span class="dept">(소프트웨어학부)</span></p><p>로봇기업경영 <span class="dept">(지능형로봇학과)</span></p><p>협동로봇실습 <span class="dept">(지능형로봇학과)</span></p><p>인공지능응용 <span class="dept">(정보융합학부)</span></p><p>휴머노이드전신제어 <span class="dept">(로봇학부)</span></p><p>온디바이스인공지능 <span class="dept">(로봇학부)</span></p></div></div><div class="pill-row"><span>로봇 소프트웨어</span><span>인지·비전 AI</span><span>Physical AI 실습</span><span>휴머노이드 전신제어</span></div></div></div></section><section class="slide" data-index="8"><div class="slide-inner"><div class="topline"><div class="brand">KWANGWOON UNIVERSITY · ROBOTICS-SPECIALIZED UNIVERSITY</div><div class="counter">08 / 13</div></div><div class="kicker">06 · Minor</div><h1>지능형로봇학과 <span>부전공</span></h1><div class="content"><div class="path-head"><b>대상 · 전교생</b><span>로봇 융합역량을 키우는 실무형 부전공</span></div><div class="four-col"><div class="card"><h3>1학년</h3><p>지능형로봇의이해 <span class="dept">(지능형로봇학과)</span></p><p>로봇명사와의만남 <span class="dept">(지능형로봇학과)</span></p><p>기초로봇수학 <span class="dept">(지능형로봇학과)</span></p></div><div class="card"><h3>2학년</h3><p>모바일로봇의이해 <span class="dept">(지능형로봇학과)</span></p><p>로봇과상상 <span class="dept">(지능형로봇학과)</span></p><p>로봇기초실습 <span class="dept">(지능형로봇학과)</span></p><p>기초로봇설계 <span class="dept">(지능형로봇학과)</span></p><p>휴머노이드의이해 <span class="dept">(지능형로봇학과)</span></p><p>데이터사이언스개론 <span class="dept">(지능형로봇학과)</span></p></div><div class="card"><h3>3학년</h3><p>마이크로프로세서응용 <span class="dept">(지능형로봇학과)</span></p><p>로봇프로그래밍 <span class="dept">(지능형로봇학과)</span></p><p>기술과경영 <span class="dept">(지능형로봇학과)</span></p><p>AI프로그래밍 <span class="dept">(지능형로봇학과)</span></p><p>머신러닝의이해 <span class="dept">(지능형로봇학과)</span></p></div><div class="card"><h3>4학년</h3><p>로봇비전응용 <span class="dept">(지능형로봇학과)</span></p><p>자연어처리기초및응용 <span class="dept">(지능형로봇학과)</span></p><p>지능형드론제어 <span class="dept">(지능형로봇학과)</span></p><p>로봇기업경영 <span class="dept">(지능형로봇학과)</span></p><p>협동로봇실습 <span class="dept">(지능형로봇학과)</span></p></div></div></div></div></section><section class="slide" data-index="9"><div class="slide-inner"><div class="topline"><div class="brand">KWANGWOON UNIVERSITY · ROBOTICS-SPECIALIZED UNIVERSITY</div><div class="counter">09 / 13</div></div><div class="kicker">07 · Scholarship</div><h1>사업 <span>지원 혜택</span></h1><div class="content"><div class="scholar-grid"><div class="scholar"><small>로봇학부 주전공</small><strong>최대 300만원</strong><p>단계별 이수에 따른 장학금 지급 예정</p></div><div class="scholar"><small>휴머노이드 · 모바일로봇 연계전공</small><strong>최대 200만원</strong><p>연계전공 이수 단계별 장학금 지급 예정</p></div><div class="scholar"><small>지능형로봇학과 부전공</small><strong>최대 200만원</strong><p>부전공 이수 단계별 장학금 지급 예정</p></div></div><p class="footnote">※ 장학금 금액과 지급 기준은 예산 및 사업 운영 상황에 따라 변경될 수 있습니다.</p></div></div></section><section class="slide" data-index="10"><div class="slide-inner"><div class="topline"><div class="brand">KWANGWOON UNIVERSITY · ROBOTICS-SPECIALIZED UNIVERSITY</div><div class="counter">10 / 13</div></div><div class="kicker">08 · Research Internship</div><h1>연구실 <span>인턴십</span></h1><div class="content"><p class="lead">연구실 참여를 통해 로봇·AI 분야의 실무 연구 경험을 쌓을 수 있습니다.</p><div class="three-col"><div class="card"><h3>연구실 인턴십</h3><div class="statline">운영 연구실 <b>19개</b></div><p>로봇·AI 분야 연구실 인턴십 운영</p></div><div class="card"><h3>재료비 신청</h3><div class="statline">신청 <b>25개 팀</b></div><p>연구실 인턴십 관련 재료비 신청</p></div><div class="card accent"><h3>재료비 지원</h3><div class="statline">1인당 <b>25만원</b></div><div class="statline">팀당 최대 <b>100만원</b></div></div></div></div></div></section><section class="slide" data-index="11"><div class="slide-inner"><div class="topline"><div class="brand">KWANGWOON UNIVERSITY · ROBOTICS-SPECIALIZED UNIVERSITY</div><div class="counter">11 / 13</div></div><div class="kicker">09 · Beyond Class</div><h1>교실 밖까지 이어지는 <span>성장 지원</span></h1><div class="content"><div class="three-col"><div class="card iconcard"><div class="emoji">🌍</div><h3>해외 전시회</h3><p>우수 참여 학생에게 글로벌 로봇·AI 전시회 참여 기회 제공</p></div><div class="card iconcard"><div class="emoji">🏆</div><h3>학술·경진 활동</h3><p>국내외 학술대회, 전시회, 경진대회 및 전문교육 프로그램 지원</p></div><div class="card iconcard"><div class="emoji">🤝</div><h3>산학협력·멘토링</h3><p>산학협력 프로젝트, 산학인턴십, KW-IC 심화교육과정, 지도교수 매칭</p></div></div></div></div></section><section class="slide" data-index="12"><div class="slide-inner"><div class="topline"><div class="brand">KWANGWOON UNIVERSITY · ROBOTICS-SPECIALIZED UNIVERSITY</div><div class="counter">12 / 13</div></div><div class="kicker">10 · Before You Apply</div><h1>신청 전 <span>꼭 확인하세요</span></h1><div class="content"><div class="checklist"><div><b>01</b><span><strong>로봇학부 주전공</strong><br/>2학년 학생은 적극 신청 · 3학년도 이수 가능학점 확인 후 신청</span></div><div><b>02</b><span><strong>지능형로봇학과 부전공</strong><br/>교내 다전공 신청기간에 반드시 신청</span></div><div><b>03</b><span><strong>휴머노이드 · 모바일로봇 연계전공</strong><br/>교내 다전공 신청기간에 반드시 신청</span></div></div></div></div></section><section class="slide" data-index="13"><div class="slide-inner"><div class="topline"><div class="brand">KWANGWOON UNIVERSITY · ROBOTICS-SPECIALIZED UNIVERSITY</div><div class="counter">13 / 13</div></div><div class="kicker">11 · Apply</div><h1>지금 바로 <span>신청하세요</span></h1><div class="content"><div class="apply-card application-panel"><div class="scan-area"><img alt="참여 신청 QR코드" class="apply-qr" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABaAAAAWgCAIAAAAnwnOfAABVLElEQVR4nO3d0ZJqPZKl2xPH4v1fOfuCNmvKolDCXgjpE2NcZ7n5nhLrpzwc+PnPf/7z/wEAAACU/f+rGwAAAAC4yoADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPJ+VzfAO/38/KxugcX+85//rG4BACDD+2e8fz6JDQ4AAAAg78e8qsu8mWd4jZ/t0XPgXeder89aznct+Y95vo3V+3/E+2eeUb/n38wGBwAAAJBngyPG1JkrvN7P8Opz4NVzr9dnLee7lvzHPN/G6v0/4v0zV1TuOTc2OAAAAIA8GxwZZs+8i1d915XnwDPnXq/PWs53LfmPeb6N1ft/xPtn3mXne849GxwAAABAng2OrZk6M5snQMW7ngaPTrxen7Wc71ryH/N8G6v3/5f3z8y2z23nLxscAAAAQN7v6gb435k98xm3m2YODQDUef/MZ3j/vDMbHAAAAECe7+DYlAk0n+Q5sLMZT4P7E6/XZy3nu5b8xzzfxur9/+X9M5900tPyJDY4AAAAgDzfwbEds2c+zycJAYAu75/5PO+f92SDAwAAAMizwbERs2fWMocGAFq8f2Yt7593Y4MDAAAAyDPgAAAAAPIMOAAAAIC8H58X2oFPD7IbT4bdvOsp8ehk6/VZy/muJf8xz7exbv/eP7ObU5+iLTY4AAAAgDwDDgAAACDPgAMAAADI8x0cW/AZQnbjybCnK8+KZ860Xp+1nO9a8h/zfBsr9u/9M7vZ4bWMDQ4AAAAgzwbHYmbP7MzzYU+vPjdePcd6fdZyvmvJf8zzbazSv/fP7Gy31/W3scEBAAAA5NngWMwEmp15Puzv0TPkXWdXr89aznct+Y95vo3t3L/3z+xsh9fIN7PBAQAAAOTZ4FjMBJqdeT4AALvx/pmdef+8lg0OAAAAIO93dQPswqxxB/4iAQBQ4f3zDrx/5p4NDgAAACDPBsdXM3Xezd8TMZP2Lfdj9Xzq+dfV86/3X1fP3/NtrN7/PBLYjffP3LPBAQAAAOT5FZXFVs0XnXvLt92TV/+9r/Y5u/5s9Xzq+dfV86/3X1fP3/NtrNL/t70v4t+4J9/JBgcAAACQZ4Njsc9PFp141zfcliv/xme6nV1/tno+9fzr6vnX+6+r5+/5Ntbq/xveEfEubsu3scEBAAAA5NngWOyTM0VnfYZT78y7/l2Pep5df7Z6PvX86+r51/uvq+fv+TZW7P/U90LM4858DxscAAAAQN7v6gb4BHPEk9xO0+97AwDM4/3zSbx//h42OAAAAIA838Gx2GfmiE75PCfdnBn/lvvOZ9efrZ5PPf+6ev71/uvq+Xu+jXX7P+ldEJ/k5nwDGxwAAABAnu/gOJwJ4ql8khAAYAbvn0/l/fM3sMEBAAAA5BlwAAAAAHkGHAAAAECeAQcAAACQZ8ABAAAA5P34luC1Zn+Lr/M920n3513/lkc9z64/Wz2fev519fzr/dfV8/d8Gyv2f9L7Hz7P/TmbDQ4AAAAgz4ADAAAAyDPgAAAAAPJ8B8diPgPGFefdnyv/ome6nV1/tno+9fzr6vnX+6+r5+/5Ntbq/7z3P3yS+3M2GxwAAABAng2OxUwQueLU+/Pqv+vVPmfXn62eTz3/unr+9f7r6vl7vo1V+j/1/Q+f4f6czQYHAAAAkGeDYzETRK74hvvz6N/4rt5m15+tnk89/7p6/vX+6+r5e76N7dz/N7z/YR7352w2OAAAAIA8GxyLmSByhfsDAHwb73+4wv05mw0OAAAAIO93dQOcb/aU9PPMZQEAmMf7Z/g3NjgAAACAPBscTHHe1Pne33+dmTSr7Pwt9+yv/isS7j87cz95lffPcJ0NDgAAACDPBgdvdvbs+ZHbv9ocms945lV2/79xM7k3+/7U68MV7if/xvtneBcbHAAAAECeDQ7e5jtnz/fMoZnt315lbiY3s+9PvT5c4X7yb7x/9irgvWxwAAAAAHk2OHgDs+d75tDMcP1V5mZ+s9n3p14frnA/+TfeP9/zKuBdbHAAAAAAeQYcAAAAQJ4BBwAAAJDnOzi4xKcHH/FJQt7lva8yN/PbzL4/9fpwhfvJv/H++RGvAq6zwQEAAADkGXAAAAAAeQYcAAAAQJ4BBwAAAJBnwAEAAADkGXAAAAAAeQYcAAAAQN7v6gYAGLn9Gvztl+HfVY3vMfv+1OvDFe4nwG5scAAAAAB5BhwAAABAngEHAAAAkOc7OAACrn/S26e7v9ns+1OvD1e4nwD7sMEBAAAA5NngAMj4t78T+tsgN7PvT70+XOF+AuzABgcAAACQZ4MDIOb+L36P/lror4I8Mvv+1OvDFe4nwFo2OAAAAIA8GxwAYf4SyBWz70+9PlzhfgJ8ng0OAAAAIM+AAwAAAMgz4AAAAADyfAcH8NXq33Kv/7PNzkf9ter5qL+2/mz1/oHvZIMDAAAAyPsxhV3r0XT8XWaf7+z+6+r5n/p8eDW33XLQ/9lm56P+WvV81F9bf7ZK//X3P94/j9Xz3+11/W1scAAAAAB5NjgWq08QTaDH6vmf93y4ktgOaej/bLPzUX+tej7qr60/W6v/+vsf75/H6vnv8Ir+ZjY4AAAAgDwbHIvVJ4gm0GP1/E96Prwrq/rnjfW/p9n5qD+uP1s9H/XX1p+t2H/9/Y/3z2P1/E99r1JhgwMAAADIM+AAAAAA8gw4AAAAgDzfwbFY/TNgPkM4Vs//jOfDjJTqnzTW/z5m56P+uP5s9XzUX1t/tm7/9fc/3j+P1fM/6V1KkQ0OAAAAIM+AAwAAAMgz4AAAAADyDDgAAACAPAMOAAAAIM+AAwAAAMgz4AAAAADyfvxO71r132H2O95j9fxPej68K6tVmej/5qQ7eW92PuqP689Wz0f9tfVnK/Zff//j/fNYPf9T36tU2OAAAAAA8gw4AAAAgDwDDgAAACDPd3AsVv8MmM8QjtXzP+/5cCWxHdLQ/9lm56P+WvV81F9bf7ZW//X3P94/j9Xz3+EV/c1scAAAAAB5NjgWq08QTaDH6vmf+nx4NbfdctD/2Wbno/5a9XzUX1t/tkr/9fc/3j+P1fPf7XX9bWxwAAAAAHk2OBarTxBNoMfq+X/D8+FRhpV/u/7PNjsf9deq56P+2vqz7dx//f2P989j9fx3eI18MxscAAAAQJ4NjsXqE0QT6LF6/p4PAMBu6u9/vH8eq+fv/fNaNjgAAACAPAMOAAAAIM+AAwAAAMj7Xd0AwEq+RX8t+axVv//qn62ef70+QJENDgAAACDPBgfwdZ759uz7/82rfw2bXb9OPmvV77/6Z6vnX68PUGeDAwAAAMizwQF8kX/75fPb/9UzfwebXb9OPmvV77/6Z6vnX68PcAYbHAAAAECeDQ7gK/zb377+Vnj0d7DZ9evks1b9/qt/9v2v51+vD3ASGxwAAABAngEHAAAAkGfAAQAAAOT5Dg7gcNc/vfy32v0nmWfXr5PPWvX7r/64fl09/3p9gPPY4AAAAADyDDgAAACAPAMOAAAAIM+AAwAAAMgz4AAAAADy/IoKl9y+i/u93/J9Bt9SDgDAX94/P+L9M9fZ4AAAAADybHAAh3vv30n+/m1hdv06+axVv//qj+vX1fOv1wc4jw0OAAAAIM8GB7yZv5AAAMDzvH/mXWxwAAAAAHk/pmVrzf7+5E+er++Cvjkp8/OeD1cSeyaN2fXr5LNW/f6rf7Z6/vX6LSe9//H++eakzM97xbXY4AAAAADybHAsdt4E8Zvn0Oelferz4dXcXs1hdv06+axVv//qn62ef71+xXnvf7x//qTz7g/3bHAAAAAAeTY4Fjt1gvg9c+i1r6BT788nPcrwXf/22fXr5LNW/f6rf7Z6/vX6Ozv1/Y/3z59x6v3hxgYHAAAAkGeDY7FvmCCeN43eIdWbb7g/AAD3vuH9j/fP83zD/flmNjgAAACAvN/VDXA+U0wAAHie98/wb2xwAAAAAHk2OICt1b8l3rfoc4XzHavn4/mwlvzH6v0D38kGBwAAAJDnV1QW8y2+XHHq/Xn137XbPZ/dfz0fxpzvWD0fz4e15D9W6f/U9z98hvtzNhscAAAAQJ4NjsVMELnivPtz5V+0w22f3X89H8ac71g9H8+HteQ/1ur/vPc/fJL7czYbHAAAAECeDY7FTBC54qT7865/S/3zwI/6r+fDmPMdq+fj+bCW/MeK/Z/0/ofPc3/OZoMDAAAAyDPgAAAAAPIMOAAAAIA838GxmM+AccUZ92fGv6L+SeD7/uv5MOZ8x+r5eD6sJf+xbv9nvP9hFffnbDY4AAAAgDwDDgAAACDPgAMAAADI+13dAHPdPmPmk2Dnmf3pQQCA7+T986m8f/4GNjgAAACAPAMOAAAAIM+AAwAAAMj78emytT7zSTCnfJJPfnrwkzfnXf+uVbd9dv/1fBhzvmP1fDwf1pL/WLF/75951anvn/nLBgcAAACQZ8DxFX5+fnxpMAAAPMn7Zygy4AAAAADyfAfHYp8fDDvxrm+4LVf+jTvc7dn91/NhzPmO1fPxfFhL/mOt/r/hHRHv4rZ8GxscAAAAQJ4NjsVWfbTPubd82z159d+7232e3X89H8ac71g9H8+HteQ/Vun/294X8W/ck+9kgwMAAADIs8Gx2NovZ3b6O9vhi7t3uCGPctiht2fM7r+eD2POd6yej+fDWvIf27l/7595xPtnbHAAAAAAeTY4FtthynjjJuxgn/tw41YAALvZ5/2Sd0o72Oc+3LgVa9ngAAAAAPJ+VzfALnabfQIAwM68f4bd2OAAAAAA8mxwAFvb+Vvcn6H/tfS/lv7X0v9a+gf4PBscAAAAQJ5fUVnMJ/fY2arnw6uvi92eY/pfS/9r6X8t/a+l/8/w/pmd7fa6/jY2OAAAAIA8GxxbMIdmN8W/yezwNNP/WvpfS/9r6X8t/X+e98/sZofXMjY4AAAAgDwbHFswgWY3n38yvOtVUP87kv7/jf5v9P9v9H+j/3+j/5vuOwd4F/+f9Q5scAAAAAB5BhwAAABAngEHAAAAkOc7ODbik4Ts4IzP0H7yX6H/v/T/PP3/pf/n6f8v/T+v3v+N98/swP9PvQ8bHAAAAECeAQcAAACQZ8ABAAAA5P2uboD/5/bZLZ8kZBWfHgQAWrx/Zi3vn3djgwMAAADIs8GxHXNoPs/sGQDo8v6Zz/P+eU82OAAAAIC8H5OnPZlA80k7PAfededX/Vv0f6P/f6P/G/3/G/3f6P/f1Pu/5/0zn7TDnecvGxwAAABAnu/g2JRPEvIZZs8AwBm8f+YzvH/emQ0OAAAAIM93cGSYRvMuO7/qr9zzHf5d+l9L/2vpfy39r6X/PXn/zLvsfM+5Z4MDAAAAyLPBEWMOzRWV1/ur93y3f5f+19L/WvpfS/9r6X9P3j9zReWec2ODAwAAAMizwRFmGs0z6q/xR/e88u/S/1r6X0v/a+l/Lf3vyftnnlG/59/MBgcAAACQZ4PjKGbSeEUDADzP+2e8fz6JDQ4AAAAgzwYHAAAAkGeDAwAAAMj7Xd0AwMip3+L+LvV86v0z5nzPNvt86/en3j9AkQ0OAAAAIM93cADbefX7zL/tOVbPp94/Y873bLPPt35/6v0D1NngAAAAAPJscAAbufJb9N/wNKvnU++fMed7ttnnW78/9f4BzmCDAwAAAMizwQFs4crfvu6d+kyr51PvnzHne7bZ51u/P/X+AU5igwMAAADIM+AAAAAA8gw4AAAAgDzfwQEs9q5PL9876clWz6feP2PO92yzz7d+f+r9A5zHBgcAAACQZ8ABAAAA5BlwAAAAAHkGHAAAAECeAQcAAACQZ8ABAAAA5BlwAAAAAHk/fm0b2MHPz89b6pz6TKvnU++fMed7ttnnW78/9f4BTmKDAwAAAMgz4AAAAADyDDgAAACAPN/BAWzkyieZv+FpVs+n3j9jzvdss8+3fn/q/QOcwQYHAAAAkGeDA9jOq38H+7bnWD2fev+MOd+zzT7f+v2p9w9QZ4MDAAAAyLPBAWzt0V/DPLtu6vnU+2fM+Z5t9vnW70+9f4AiGxwAAABAng0OAAAAIM8GBwAAAJBnwAEAAADkGXAAAAAAeb+rG4Dd1b8lvl6/rp6/+mvrz1bvn7Xq96f+fKjnP5v8zyZ/HrHBAQAAAOT5FRX4XzyaCj/y6utI/bPV81d/bf3Z6v2zVv3+1J8P9fxnk//Z5M8zbHAAAAAAeTY44H94dTZ875lXk/pnq+ev/tr6s9X7Z636/ak/H+r5zyb/s8mf59ngAAAAAPJscMD/dWU2fO/Ra0r9cf26ev7qr60/W71/1qrfn/rzoZ7/bPI/m/x5lQ0OAAAAIM+AAwAAAMgz4AAAAADyfAcHvO3TfffuX1nqj+vX1fNXf2392er9s1b9/tSfD/X8Z5P/2eTPv7HBAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABA3o9fA4abd/3a9qPXlPrj+nX1/NVfW3+2ev+sVb8/9edDPf/Z5H82+fMqGxwAAABAngEHAAAAkGfAAQAAAOT5Dg74H6580u+ZV5P6Z6vnr/7a+rPV+2et+v2pPx/q+c8m/7PJn+fZ4AAAAADybHDA/+LVOfGrryP1z1bPX/219Wer989a9ftTfz7U859N/meTP8+wwQEAAADk2eCA/+LRtPhdrx31z1bPX/219Wer989a9ftTfz7U859N/meTP4/Y4AAAAADybHAAAAAAeTY4AAAAgDwDDgAAACDPgAMAAADI+13dAOerf4u1b2kek89Y/X4637F6/vX6dfX8ne/Z6vdH/bX16+TTZYMDAAAAyPMrKkzxaOr5yKv3sF6/Tj5j9fvpfMfq+dfr19Xzd75nq98f9dfWr5PPGWxwAAAAAHk2OHizV2ef9565jfX6dfIZq99P5ztWz79ev66ev/M9W/3+qL+2fp18TmKDAwAAAMizwcHbXJl93nt0J+v16+QzVr+fznesnn+9fl09f+d7tvr9UX9t/Tr5nMcGBwAAAJBnwAEAAADkGXAAAAAAeb6Dgzd416fX7t3fzHr9OvmM1e+n8x2r51+vX1fP3/merX5/1F9bv04+p7LBAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABA3o9f6+Vd3vVr0o/uZL1+nXzG6vfT+Y7V86/Xr6vn73zPVr8/6q+tXyef89jgAAAAAPIMOAAAAIA8Aw4AAAAgz3dw8GZXPsn2zG2s16+Tz1j9fjrfsXr+9fp19fyd79nq90f9tfXr5HMSGxwAAABAng0Opnh1DvrqPazXr5PPWP1+Ot+xev71+nX1/J3v2er3R/219evkcwYbHAAAAECeDQ6mezQNfdfdq9evk89Y/X4637F6/vX6dfX8ne/Z6vdH/bX16+TTZYMDAAAAyLPBAQAAAOTZ4AAAAADyDDgAAACAPAMOAAAAIO93dQP8d77Fd636t1i7P2P1fPR/NvmMyWesnk/9v4/yX1t/tnr/s8mHVWxwAAAAAHl+RWVTj6aejzjH95qdf71+XT0f/Z9NPmPyGavnU//vo/zX1p+t3v9s8mEHNjgAAACAPBsc23l19nnPaV43O/96/bp6Pvo/m3zG5DNWz6f+30f5r60/W73/2eTDPmxwAAAAAHk2ODZyZfZ5z5n+m9n51+vX1fPR/437OSafMfmMnfp8qNefTT5j9f5nkw+7scEBAAAA5BlwAAAAAHkGHAAAAECe7+DYwrs+vXbPyT5vdv71+nX1fPT/l/s5Jp8x+Yyd9Hyo159NPmP1/meTD3uywQEAAADkGXAAAAAAeQYcAAAAQJ4BBwAAAJBnwAEAAADkGXAAAAAAeQYcAAAAQN6PXxvex7t+TdqZ/pvZ+dfr19Xz0f+N+zkmnzH5jJ36fKjXn00+Y/X+Z5MPu7HBAQAAAOQZcAAAAAB5BhwAAABAnu/g2M6VT7I5zetm51+vX1fPR/9nk8+YfMbq+dT/+yj/tfVnq/c/m3zYhw0OAAAAIM8Gx6ZenYM6x/eanX+9fl09H/2fTT5j8hmr51P/76P819afrd7/bPJhBzY4AAAAgDwbHAGPpqHO7jNm51+vX1fPR/9nk8+YfMbq+dT/+yj/tfVnq/c/m3xYxQYHAAAAkGeDAwAAAMizwQEAAADkGXAAAAAAeQYcAAAAQN7v6gY4n2/hPls9f/2vVe9/Ns/PsXr/de7nWL3/2eSzltfvWL3/b2aDAwAAAMjzKypM8Wjq+cir93B2fcbq+et/rXr/s3l+jtX7r3M/x+r9zyaftbx+x+r9c2ODAwAAAMizwcGbvTr7vPfMbZxdn7F6/vpfq97/bJ6fY/X+69zPsXr/s8lnLa/fsXr/3LPBAQAAAOTZ4OBtrsw+7z26k7PrM1bPX/83+t+T5+dYvf8693Os3v9s8lnL63es3j9/2eAAAAAA8gw4AAAAgDwDDgAAACDPd3DwBu/69Nq9+5s5uz5j9fz1/5f+9+H5OVbvv879HKv3P5t81vL6Hav3zyM2OAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyPvxa728y7t+TfrRnZxdn7F6/vq/0f+ePD/H6v3XuZ9j9f5nk89aXr9j9f75ywYHAAAAkGfAAQAAAOQZcAAAAAB5voODN7vySbZnbuPs+ozV89f/WvX+Z/P8HKv3X+d+jtX7n00+a3n9jtX7554NDgAAACDPBgdTvDoHffUezq7PWD1//a9V7382z8+xev917udYvf/Z5LOW1+9YvX9ubHAAAAAAeTY4mO7RNPRdd292fcbq+et/rXr/s3l+jtX7r3M/x+r9zyaftbx+x+r9fzMbHAAAAECeDQ4AAAAgzwYHAAAAkGfAAQAAAOQZcAAAAAB5v6sb4Hy+pXmtej71+1PPfzb5ryWfter33/1Zq56/+zlWz0f+rGKDAwAAAMjzKypM8Wjq+cir93B2/bp6PvX7U89/NvmvJZ+16vff/Vmrnr/7OVbPR/7swAYHAAAAkGeDgzd7dfZ575nbOLt+XT2f+v2p5z+b/NeSz1r1++/+rFXP3/0cq+cjf/ZhgwMAAADIs8HB21yZfd57dCdn16+r51O/P/X8Z5P/WvJZq37/3Z+16vm7n2P1fOR/4/m2DxscAAAAQJ4BBwAAAJBnwAEAAADk+Q4O3uBdn167d38zZ9evq+dTvz/1/GeT/1ryWat+/92fter5u59j9Xzk/5fn2w5scAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkPfj13p5l3f9mvSjOzm7fl09n/r9qec/m/zXks9a9fvv/qxVz9/9HKvnI/8bz7d92OAAAAAA8gw4AAAAgDwDDgAAACDPd3DwZlc+yfbMbZxdv66eT/3+1POfTf5ryWet+v13f9aq5+9+jtXzkT/7sMEBAAAA5NngYIpX56Cv3sPZ9evq+dTvTz3/2eS/lnzWqt9/92etev7u51g9H/mzAxscAAAAQJ4NDqZ7NA19192bXb+unk/9/tTzn03+a8lnrfr9d3/Wqufvfo7V85E/q9jgAAAAAPJscAAAAAB5NjgAAACAPAMOAAAAIM+AAwAAAMj7Xd0A/51vOR7T/1r1+1mvz5jzPZv815L/WD0fz8+16vnU+6fLBgcAAACQ51dUNvVo6vnIq+c4u/5s+l+rfj/r9RlzvmeT/1ryH6vn4/m5Vj2fev+cwQYHAAAAkGeDYzuvzj7vPXOas+vPpv+16vezXp8x53s2+a8l/7F6Pp6fa9XzqffPSWxwAAAAAHk2ODZyZfZ579GZzq4/m/5vTu1f/XF9xpzv2eS/lvzH6vl4fq5Vz6feP+exwQEAAADkGXAAAAAAeQYcAAAAQJ7v4NjCuz69du/+ZGfXn03/f53Uv/rj+ow537PJfy35j9Xz8fxcq55PvX9OZYMDAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIC8H782vI93/Zr0ozOdXX82/d+c2r/64/qMOd+zyX8t+Y/V8/H8XKueT71/zmODAwAAAMgz4AAAAADyDDgAAACAPN/BsZ0rn2R75jRn159N/2vV72e9PmPO92zyX0v+Y/V8PD/XqudT75+T2OAAAAAA8mxwbOrVOeir5zi7/mz6X6t+P+v1GXO+Z5P/WvIfq+fj+blWPZ96/5zBBgcAAACQZ4Mj4NE09F1nN7v+bPpfq34/6/UZc75nk/9a8h+r5+P5uVY9n3r/dNngAAAAAPJscAAAAAB5NjgAAACAPAMOAAAAIM+AAwAAAMj7Xd0A69W/Jbv+Lc31fOS/tn6d/Mfq+dTrs1b9fOv3v57/bPX86/XhERscAAAAQJ5fUflSj6aqj7x6T+r1Z6vnI/+19evkP1bPp16fternW7//9fxnq+dfrw/PsMEBAAAA5Nng+DqvzlbvPXNb6vVnq+cj/7X16+Q/Vs+nXp+16udbv//1/Ger51+vD8+zwQEAAADk2eD4Ildmq/ce3Zl6/dnq+cj/5tR8ZpP/WD2fen3Wqp9v/f7X85+tnn+9PrzKBgcAAACQZ8ABAAAA5BlwAAAAAHm+g+MrvOvTcffub069/mz1fOT/10n5zCb/sXo+9fqsVT/f+v2v5z9bPf96ffg3NjgAAACAPAMOAAAAIM+AAwAAAMgz4AAAAADyDDgAAACAPAMOAAAAIM+AAwAAAMj78WvD3+Ndv1b96M7U689Wz0f+N6fmM5v8x+r51OuzVv186/e/nv9s9fzr9eFVNjgAAACAPAMOAAAAIM+AAwAAAMjzHRxf58on5Z65LfX6s9Xzkf/a+nXyH6vnU6/PWvXzrd//ev6z1fOv14fn2eAAAAAA8mxwfKlX56yv3pN6/dnq+ch/bf06+Y/V86nXZ636+dbvfz3/2er51+vDM2xwAAAAAHk2OHg4bX3X3ajXn62ej/zX1q+T/1g9n3p91qqfb/3+1/OfrZ5/vT48YoMDAAAAyLPBAQAAAOTZ4AAAAADyDDgAAACAPAMOAAAAIO93dQOwO98Cfbb6+foW9LF6PvX8Z6vn73zP5nzX8vpdq56/8+2ywQEAAADk+RUV+F88mto+4nXUUj/f2f3L5+z6dfX8ne/ZnO9aXr9r1fN3vmewwQEAAADk2eCA/+HV2e09r6b91c93dv/yObt+XT1/53s257uW1+9a9fyd70lscAAAAAB5Njjg/7oyu73nNbWn+vnO7l8+N6vyqec/Wz1/53s257uW1+9a9fyd73lscAAAAAB5BhwAAABAngEHAAAAkOc7OOBtn76755W1j/r5zu5fPn99Mp96/rPV83e+Z3O+a3n9rlXP3/meygYHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5P36tF27e9WvYXlN7qp/v7P7lc7Mqn3r+s9Xzd75nc75ref2uVc/f+Z7HBgcAAACQZ8ABAAAA5BlwAAAAAHm+gwP+hyufxPNq2l/9fGf3L5+z69fV83e+Z3O+a3n9rlXP3/mexAYHAAAAkGeDA/4Xr85xvY5a6uc7u3/5nF2/rp6/8z2b813L63etev7O9ww2OAAAAIA8GxzwXzya5nrtnKF+vrP7l8/Z9evq+Tvfsznftbx+16rn73y7bHAAAAAAeTY4AAAAgDwbHAAAAECeAQcAAACQZ8ABAAAA5P2uboDz1b/lWP219evkP1bPp15/Nv2vrT9bvX/Wqr++6vdfPmP1/r+ZDQ4AAAAgz6+oMMWjqecjr95D9c+uXyf/sXo+9fqz6X9t/dnq/bNW/fVVv//yGav3z40NDgAAACDPBgdv9urs894zt1H9s+vXyX+snk+9/mz6X1t/tnr/rFV/fdXvv3zG6v1zzwYHAAAAkGeDg7e5Mvu89+hOqn92/Tr5j9XzqdefTf83znfs1Oc/Y/XXV/3+y2es3j9/2eAAAAAA8gw4AAAAgDwDDgAAACDPd3DwBu/69Nq9+5up/tn16+Q/Vs+nXn82/f/lfMdOev4zVn991e+/fMbq/fOIDQ4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPJ+/Fov7/KuX5N+dCfVP7t+nfzH6vnU68+m/xvnO3bq85+x+uurfv/lM1bvn79scAAAAAB5BhwAAABAngEHAAAAkOc7OHizK59ke+Y2qn92/Tr5j9XzqdefTf9r689W75+16q+v+v2Xz1i9f+7Z4AAAAADybHAwxatz0Ffvofpn16+T/1g9n3r92fS/tv5s9f5Zq/76qt9/+YzV++fGBgcAAACQZ4OD6R5NQ99199Q/u36d/Mfq+dTrz6b/tfVnq/fPWvXXV/3+y2es3v83s8EBAAAA5NngAAAAAPJscAAAAAB5BhwAAABAngEHAAAAkPe7ugH+O9/iO1b/Fuj6+db7r5M/dPnvy5h8xur9M1a//+4nq9jgAAAAAPL8isqmHk09H/m2c5ydT73+bPX+6+QPXf77MiafsXr/jNXvv/vJDmxwAAAAAHk2OLbz6uzz3jec5ux86vVnq/dfJ3/o8t+XMfmM1ftnrH7/3U/2YYMDAAAAyLPBsZErs897p57p7Hzq9Wer918nf+jy35cx+YzV+2esfv/dT3ZjgwMAAADIM+AAAAAA8gw4AAAAgDzfwbGFd3167d5JJzs7n3r92er918kfuvz3ZUw+Y/X+Gavff/eTPdngAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAg78evDe/jXb8mfeqZzs6nXn+2ev918ocu/30Zk89YvX/G6vff/WQ3NjgAAACAPAMOAAAAIM+AAwAAAMjzHRzbufJJtm84zdn51OvPVu+/Tv7Q5b8vY/IZq/fPWP3+u5/swwYHAAAAkGeDY1OvzkG/7Rxn51OvP1u9/zr5Q5f/vozJZ6zeP2P1++9+sgMbHAAAAECeDY6AR9NQZ3czO596/dnq/dfJH7r892VMPmP1/hmr33/3k1VscAAAAAB5NjgAAACAPBscAAAAQJ4BBwAAAJBnwAEAAADk/a5ugPV8y/FavsV6rXr+znesnn+9/mz1/mdzf8b0z87q51vvny4bHAAAAECeX1H5Uo+mqo+4J+81O3/nO1bP3/mO1fOv15+t3v9s7s+Y/tlZ/Xzr/XMGGxwAAABAng2Or/PqbPWe23Ld7Pyd71g9f+c7Vs+/Xn+2ev+zuT9j+mdn9fOt989JbHAAAAAAeTY4vsiV2eo9d+bfzM7f+Y7V83e+Y/X86/Vnq/c/m/szpv+bU+9/Xf186/1zHhscAAAAQJ4BBwAAAJBnwAEAAADk+Q6Or/CuT8fdc3OeNzt/5ztWz9/5jtXzr9efrd7/bO7PmP7/Oun+19XPt94/p7LBAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABA3o9fG/4e7/q1anfm38zO3/mO1fN3vmP1/Ov1Z6v3P5v7M6b/m1Pvf139fOv9cx4bHAAAAECeAQcAAACQZ8ABAAAA5PkOjq9z5ZNybst1s/N3vmP1/J3vWD3/ev3Z6v3P5v6M6Z+d1c+33j8nscEBAAAA5Nng+FKvzlndk/eanb/zHavn73zH6vnX689W738292dM/+ysfr71/jmDDQ4AAAAgzwYHD6et7sZnzM7f+Y7V83e+Y/X86/Vnq/c/m/szpn92Vj/fev902eAAAAAA8mxwAAAAAHk2OAAAAIA8Aw4AAAAgz4ADAAAAyPtd3QD/Xf1b0Ov1GavnX+9/tvrr1/mOyWesnk/99SX/tfVn0//a+rPpn1VscAAAAAB5fkVlU4+mho+8eo7qc0U9/3r/s9Vfv853TD5j9Xzqry/5r60/m/7X1p9N/+zABgcAAACQZ4NjO6/ODu89c5rqc0U9/3r/s9Vfv853TD5j9Xzqry/5r60/m/7X1p9N/+zDBgcAAACQZ4NjI1dmh/cenan64/qM1fOv9z9b/fXrfMfkM1bPp/76kv+NfMZO7V8+N/rnXWxwAAAAAHkGHAAAAECeAQcAAACQ5zs4tvCuT3/duz9Z9cf1GavnX+9/tvrr1/mOyWesnk/99SX/v+QzdlL/8vlL/1xngwMAAADIM+AAAAAA8gw4AAAAgDwDDgAAACDPgAMAAADIM+AAAAAA8gw4AAAAgLwfv9a7j3f9GvOjM1V/XJ+xev71/merv36d75h8xur51F9f8r+Rz9ip/cvnRv+8iw0OAAAAIM+AAwAAAMgz4AAAAADyfAfHdq58EuyZ01SfK+r51/ufrf76db5j8hmr51N/fcl/bf3Z9L+2/mz6Zx82OAAAAIA8GxybenWO+Oo5qs8V9fzr/c9Wf/063zH5jNXzqb++5L+2/mz6X1t/Nv2zAxscAAAAQJ4NjoBH08R3nZ36XFHPv97/bPXXr/Mdk89YPZ/660v+a+vPpv+19WfTP6vY4AAAAADybHAAAAAAeTY4AAAAgDwDDgAAACDPgAMAAADI+13dAP9d/Vt86/3X+ZbvsXo+9fxnq+ej/7PVnw/1+pzN/Rnz+h2r9//NbHAAAAAAeX5FZVOPpoaP7HaO9f7rZudfP996PvX8Z6vno/+z1Z8P9fqczf0Z8/odq/fPjQ0OAAAAIM8Gx3ZenR3e2+E06/3Xzc6/fr71fOr5z1bPR/9nqz8f6vU5m/sz5vU7Vu+fezY4AAAAgDwbHBu5Mju8t+pM6/3Xzc6/fr71fOr5z1bPR/837ufYqc8f94cr3J8xr9+xev/8ZYMDAAAAyDPgAAAAAPIMOAAAAIA838GxhXd9+uveJ0+23n/d7Pzr51vPp57/bPV89P+X+zl20vPH/eEK92fM63es3j+P2OAAAAAA8gw4AAAAgDwDDgAAACDPgAMAAADIM+AAAAAA8gw4AAAAgDwDDgAAACDvx6/17uNdv8a86kzr/dfNzr9+vvV86vnPVs9H/zfu59ipzx/3hyvcnzGv37F6//xlgwMAAADIM+AAAAAA8gw4AAAAgDzfwbGdK58E2+E06/3Xzc6/fr71fOr5z1bPR/9nqz8f6vU5m/sz5vU7Vu+fezY4AAAAgDwbHJt6dY642znW+6+bnX/9fOv51POfrZ6P/s9Wfz7U63M292fM63es3j83NjgAAACAPBscAY+miZWzq/dfNzv/+vnW86nnP1s9H/2frf58qNfnbO7PmNfvWL3/b2aDAwAAAMizwQEAAADk2eAAAAAA8gw4AAAAgDwDDgAAACDvd3UDrOdblNmZ+zNWz6fe/2zyGavn47+/Y/X+Z6vnU+9/tno+nm+sYoMDAAAAyPMrKl/q0dTzkVfvyez6nM39GavnU+9/NvmM1fPx39+xev+z1fOp9z9bPR/PN3ZggwMAAADIs8HxdV6dfd575rbMrs/Z3J+xej71/meTz1g9H//9Hav3P1s9n3r/s9Xz8XxjHzY4AAAAgDwbHF/kyuzz3qM7M7s+Z3N/xur51PufTT5j9Xz893es3v9s9Xzq/c9Wz8fzjd3Y4AAAAADyDDgAAACAPAMOAAAAIM93cHyFd3167d79zZldn7O5P2P1fOr9zyafsXo+/vs7Vu9/tno+9f5nq+fj+caebHAAAAAAeQYcAAAAQJ4BBwAAAJBnwAEAAADkGXAAAAAAeQYcAAAAQJ4BBwAAAJD349eAv8e7fk360Z2ZXZ+zuT9j9Xzq/c8mn7F6Pv77O1bvf7Z6PvX+Z6vn4/nGbmxwAAAAAHkGHAAAAECeAQcAAACQ5zs4vs6VT7I9c1tm1+ds7s9YPZ96/7PJZ6yej//+jtX7n62eT73/2er5eL6xDxscAAAAQJ4Nji/16hz01Xsyuz5nc3/G6vnU+59NPmP1fPz3d6ze/2z1fOr9z1bPx/ONHdjgAAAAAPJscPBwGvquuzG7Pmdzf8bq+dT7n00+Y/V8/Pd3rN7/bPV86v3PVs/H841VbHAAAAAAeTY4AAAAgDwbHAAAAECeAQcAAACQZ8ABAAAA5P2uboDz1b/luP4t0PX8Z6vnU+9/Nq+vter5uD9nq59vvf5s9f5nkw+nssEBAAAA5PkVFaZ4NBV+ZLd7OLv/ev26ej71/mfz+lqrno/7c7b6+dbrz1bvfzb58A1scAAAAAB5Njh4s1dnw/d2uI2z+6/Xr6vnU+9/Nq+vter5uD9nq59vvf5s9f5nkw/fwwYHAAAAkGeDg7e5Mhu+t+pOzu6/Xr+unk+9/9m8vtaq5+P+nK1+vvX6s9X7n00+fBsbHAAAAECeAQcAAACQZ8ABAAAA5PkODt7gXZ/uu/fJmzm7/3r9uno+9f5n8/paq56P+3O2+vnW689W7382+fCdbHAAAAAAeQYcAAAAQJ4BBwAAAJBnwAEAAADkGXAAAAAAeQYcAAAAQJ4BBwAAAJD349eMeZd3/dr2qjs5u/96/bp6PvX+Z/P6Wquej/tztvr51uvPVu9/NvnwbWxwAAAAAHkGHAAAAECeAQcAAACQ5zs4eLMrn/Tb4TbO7r9ev66eT73/2by+1qrn4/6crX6+9fqz1fufTT58DxscAAAAQJ4NDqZ4dU682z2c3X+9fl09n3r/s3l9rVXPx/05W/186/Vnq/c/m3z4BjY4AAAAgDwbHEz3aFpcuXuz+6/Xr6vnU+9/Nq+vter5uD9nq59vvf5s9f5nkw+nssEBAAAA5NngAAAAAPJscAAAAAB5BhwAAABAngEHAAAAkPe7ugHWq38Ld70+Y/XzdX/G6vnXz1f/a9Xvp/zPVr8/9fp19fydb5cNDgAAACDPr6h8qUdTyUdevSfqc0X9fN2fsXr+9fPV/1r1+yn/s9XvT71+XT1/53sGGxwAAABAng2Or/PqbPLeM7dFfa6on6/7M1bPv36++l+rfj/lf7b6/anXr6vn73xPYoMDAAAAyLPB8UWuzCbvPboz6o/rM1Y/X/dnrJ5//Xz1f3Nq//X6s9X7n61+f+r16+r5O9/z2OAAAAAA8gw4AAAAgDwDDgAAACDPd3B8hXd9uuze/c1Rf1yfsfr5uj9j9fzr56v/v07qv15/tnr/s9XvT71+XT1/53sqGxwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOT9+LXe7/GuX3t+dGfUH9dnrH6+7s9YPf/6+er/5tT+6/Vnq/c/W/3+1OvX1fN3vuexwQEAAADkGXAAAAAAeQYcAAAAQJ7v4Pg6Vz5p9sxtUZ8r6ufr/ozV86+fr/7Xqt9P+Z+tfn/q9evq+Tvfk9jgAAAAAPJscHypV+eUr94T9bmifr7uz1g9//r56n+t+v2U/9nq96dev66ev/M9gw0OAAAAIM8GBw+nle+6G+pzRf183Z+xev7189X/WvX7Kf+z1e9PvX5dPX/n22WDAwAAAMizwQEAAADk2eAAAAAA8gw4AAAAgDwDDgAAACDvd3UDrOdbiNeq56/+2vqcrX5/6v0zVn9+1u9nPR/5r61fJ38escEBAAAA5PkVlS/1aCr5yKv3ZHb9unr+6q+tz9nq96feP2P152f9ftbzkf/a+nXy5xk2OAAAAIA8Gxxf59XZ5L1nbsvs+nX1/NVfW5+z1e9PvX/G6s/P+v2s5yP/tfXr5M/zbHAAAAAAeTY4vsiV2eS9R3dmdv26ev7qr63P2er3p94/Y/XnZ/1+1vOR/82p+cwmf15lgwMAAADIM+AAAAAA8gw4AAAAgDzfwfEV3vXpsnv3N2d2/bp6/uqvrc/Z6ven3j9j9edn/X7W85H/XyflM5v8+Tc2OAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyPvxa73f412/9vzozsyuX1fPX/219Tlb/f7U+2es/vys3896PvK/OTWf2eTPq2xwAAAAAHkGHAAAAECeAQcAAACQ5zs4vs6VT5o9c1tm16+r56/+2vqcrX5/6v0zVn9+1u9nPR/5r61fJ3+eZ4MDAAAAyLPB8aVenVO+ek9m16+r56/+2vqcrX5/6v0zVn9+1u9nPR/5r61fJ3+eYYMDAAAAyLPBwcNp5bvuxuz6dfX81V9bn7PV70+9f8bqz8/6/aznI/+19evkzyM2OAAAAIA8GxwAAABAng0OAAAAIM+AAwAAAMgz4AAAAADyflc3wH/nW3zH5HM258sVvmWdK5zv2Twfzib/sXo+9f6ZxwYHAAAAkOdXVDb1aCr5yLedo3zO5ny5Yvb9cT/P5nzP5vlwNvmP1fOp989n2OAAAAAA8mxwbOfV2eS9bzhN+ZzN+XLF7Pvjfp7N+Z7N8+Fs8h+r51Pvn0+ywQEAAADk2eDYyJXZ5L1Tz1Q+Z3O+XDH7/rifZ3O+Z/N8OJv8x+r51Pvn82xwAAAAAHkGHAAAAECeAQcAAACQ5zs4tvCuT5fdO+lk5XM258sVs++P+3k253s2z4ezyX+snk+9f1axwQEAAADkGXAAAAAAeQYcAAAAQJ4BBwAAAJBnwAEAAADkGXAAAAAAeQYcAAAAQN6PXwPex7t+7fnUM5XP2ZwvV8y+P+7n2Zzv2Twfzib/sXo+9f75PBscAAAAQJ4BBwAAAJBnwAEAAADk+Q6O7Vz5pNk3nKZ8zuZ8uWL2/XE/z+Z8z+b5cDb5j9XzqffPJ9ngAAAAAPJscGzq1Tnlt52jfM7mfLli9v1xP8/mfM/m+XA2+Y/V86n3z2fY4AAAAADybHAEPJpWOrsb+ZzN+XLF7Pvjfp7N+Z7N8+Fs8h+r51Pvn3lscAAAAAB5NjgAAACAPBscAAAAQJ4BBwAAAJBnwAEAAADk/a5ugPP5lvKxej7yV/+b1fN3vmdzvmP111f9fOv9z1bPx/1nFRscAAAAQJ5fUWGKR1PVR169h7Prz1bPR/7qX6lfV8/f+Z7N+Y7VX1/18633P1s9H/efHdjgAAAAAPJscPBmr85W7z1zG2fXn62ej/zVv1K/rp6/8z2b8x2rv77q51vvf7Z6Pu4/+7DBAQAAAOTZ4OBtrsxW7z26k7Prz1bPR/43p+ZfP9/Z6vk737M537H666t+vvX+Z6vn4/6zGxscAAAAQJ4BBwAAAJBnwAEAAADk+Q4O3uBdn467d38zZ9efrZ6P/P86Kf/6+c5Wz9/5ns35jtVfX/Xzrfc/Wz0f95892eAAAAAA8gw4AAAAgDwDDgAAACDPgAMAAADIM+AAAAAA8gw4AAAAgDwDDgAAACDvx68B8y7v+rXqR3dydv3Z6vnI/+bU/OvnO1s9f+d7Nuc7Vn991c+33v9s9Xzcf3ZjgwMAAADIM+AAAAAA8gw4AAAAgDzfwcGbXfmk3DO3cXb92er5yF/9K/Xr6vk737M537H666t+vvX+Z6vn4/6zDxscAAAAQJ4NDqZ4dc766j2cXX+2ej7yV/9K/bp6/s73bM53rP76qp9vvf/Z6vm4/+zABgcAAACQZ4OD6R5NW99192bXn62ej/zV/2b1/J3v2ZzvWP31VT/fev+z1fNx/1nFBgcAAACQZ4MDAAAAyLPBAQAAAOQZcAAAAAB5BhwAAABA3u/qBjifbzk+m2/JHqv3P1v9/tTrz6b/tfR/Ns+fsXo+6q9V7/+b2eAAAAAA8vyKClM8mno+4h62zD7f+v2p9z9b/f7U68+m/7X0fzbPn7F6PuqvVe+fGxscAAAAQJ4NDt7s1dnnPbdxf7PPt35/6v3PVr8/9fqz6X8t/Z/N82esno/6a9X7554NDgAAACDPBgdvc2X2ec+d3NPs863fn3r/s9XvT73+bPq/0f+/qfc/m+fPWD0f9cf1Z6v3z182OAAAAIA8Aw4AAAAgz4ADAAAAyPMdHLzBuz69ds/N3Mfs863fn3r/s9XvT73+bPr/S//Pq/c/m+fPWD0f9cf1Z6v3zyM2OAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyPvxa728y7t+Tdqd3NPs863fn3r/s9XvT73+bPq/0f+/qfc/m+fPWD0f9cf1Z6v3z182OAAAAIA8Aw4AAAAgz4ADAAAAyPMdHLzZlU+yuY37m32+9ftT73+2+v2p159N/2vp/2yeP2P1fNRfq94/92xwAAAAAHk2OJji1Tmoe9gy+3zr96fe/2z1+1OvP5v+19L/2Tx/xur5qL9WvX9ubHAAAAAAeTY4mO7RNNTdO8Ps863fn3r/s9XvT73+bPpfS/9n8/wZq+ej/lr1/r+ZDQ4AAAAgzwYHAAAAkGeDAwAAAMgz4AAAAADyDDgAAACAvN/VDfDf1b/lWH311e/Wr5M/O6vfT/f/bPX7o/7Z5M8jNjgAAACAPL+isqlHU8NHXj1H9dVXX/1TyZ+d1e+n+3+2+v1R/2zy5xk2OAAAAIA8GxzbeXV2eO+Z01RfffXVP5X82Vn9frr/Z6vfH/XPJn+eZ4MDAAAAyLPBsZErs8N7j85UffXVV//UZ7782Vn9frr/Z6vfH/XH9evkz6tscAAAAAB5BhwAAABAngEHAAAAkOc7OLbwrk9/3bs/WfXVV1/9R/Xr5M/O6vfT/T9b/f6oP65fJ3/+jQ0OAAAAIM+AAwAAAMgz4AAAAADyDDgAAACAPAMOAAAAIM+AAwAAAMgz4AAAAADyfvxa7z7e9WvMj85UffXVV//UZ7782Vn9frr/Z6vfH/XH9evkz6tscAAAAAB5BhwAAABAngEHAAAAkOc7OLZz5ZNgz5ym+uqrr/6p5M/O6vfT/T9b/f6ofzb58zwbHAAAAECeDY5NvTpHfPUc1VdfffVPJX92Vr+f7v/Z6vdH/bPJn2fY4AAAAADybHAEPJomvuvs1FdfffVPJX92Vr+f7v/Z6vdH/bPJn0dscAAAAAB5NjgAAACAPBscAAAAQJ4BBwAAAJBnwAEAAADk/a5uAGDEt2SvVc+/fr71fOSv/jer5+9813K+Y/X+mccGBwAAAJDnV1SA7Tyayj/y6nNsdv26ev71863nI3/1r9Svq+fvfNdyvmP1/vkMGxwAAABAng0OYCOvzubvPfM0m12/rp5//Xzr+chf/Sv16+r5O9+1nO9YvX8+yQYHAAAAkGeDA9jCldn8vUfPtNn16+r518+3no/8b07Nv36+s9Xzd75rOd+xev98ng0OAAAAIM+AAwAAAMgz4AAAAADyfAcHsNi7Pl157/7JNrt+XT3/+vnW85H/XyflXz/f2er5O9+1nO9YvX9WscEBAAAA5BlwAAAAAHkGHAAAAECeAQcAAACQZ8ABAAAA5BlwAAAAAHkGHAAAAEDej18DBnbwrl87f/RMm12/rp5//Xzr+cj/5tT86+c7Wz1/57uW8x2r98/n2eAAAAAA8gw4AAAAgDwDDgAAACDPd3AAG7nySctnnmaz69fV86+fbz0f+at/pX5dPX/nu5bzHav3zyfZ4AAAAADybHAA23l1Tv/qc2x2/bp6/vXzrecjf/Wv1K+r5+9813K+Y/X++QwbHAAAAECeDQ5ga4+m9e96ds2uX1fPv36+9Xzkr/43q+fvfNdyvmP1/pnHBgcAAACQZ4MDAAAAyLPBAQAAAOT9rm6Ad7ryG9GcwU4WAADwnWxwAAAAAHm+gyPMvgbPqL/G698i7lu+x+r51+vPVu9/tno+7v9a8h/T/9n14REbHAAAAECeDY4YWxtcUXm9v3rPX/131evX1fOv15+t3v9s9Xzc/7XkP6b/s+vDM2xwAAAAAHk2ODLsbvAuO7/qr9zzZ/5d9fp19fzr9Wer9z9bPR/3fy35j+n/7PrwPBscAAAAQJ4Njq3Z2mC2fZ4A77rtj/5F9fp19fzr9Wer9z9bPR/3fy35j+n/xn+/4MYGBwAAAJD3u7oB/nd2N/iM200zNQcAAOpscAAAAAB5voNjUzY4+KS1z4EZt/3+X1SvX1fPv15/tnr/s9Xzcf/Xkv+Y/v/y3y+wwQEAAADk+Q6O7djd4PN8EwcAAFBngwMAAADIs8GxEbsbrGWPAwAA6LLBAQAAAOQZcAAAAAB5BhwAAABA3o/P2+/At2+wm88/Gd71KnjUeb1+XT3/ev3Z6v3PVs/H/V9L/mP6v/HfL7ixwQEAAADkGXAAAAAAeQYcAAAAQJ7v4NiC7+BgN8VPoj7Tc71+XT3/ev3Z6v3PVs/H/V9L/mP6P7s+PM8GBwAAAJBng2MxuxvsrLLH8Wqf9fp19fzr9Wer9z9bPR/3fy35j+n/7PrwDBscAAAAQJ4NjsVscLCzHZ4Pj14j7+qtXr+unn+9/mz1/mer5+P+ryX/Mf2fXR8escEBAAAA5NngWMwGBzvzfAAAACpscAAAAAB5v6sbYBf+Vr8DGz0AAAD/xgYHAAAAkGeD46vZ2tjN3xOx0+FbuMfkw87q97P+KwP1+nX1fOr919Xz1z+r2OAAAAAA8vyKymKr/j7v3Fu+7Z68+u/9tvssH3ZWv5+z+1f/bPV86v3X1fPXPzuwwQEAAADk2eBY7PN/mXfiXd9wW678G7/hbsuHndXv5+z+1T9bPZ96/3X1/PXPPmxwAAAAAHk2OBb75N/knfUZTr0z7/p3nXrP5cPO6vdzdv/qj+vX1fOp919Xz1//N+7/PmxwAAAAAHm/qxvgE8wUT3I7zVW/qwIAALAnGxwAAABAnu/gWOwzf4d3yuc56ebM+LecdOflw87q93N2/+qP69fV86n3X1fPX/9/uf87sMEBAAAA5PkOjsOZI57KN3EAAADcs8EBAAAA5BlwAAAAAHkGHAAAAECeAQcAAACQZ8ABAAAA5P34lY21Zv8KhvM920n3513/llPvvHzYWf1+zu5f/XH9uno+9f7r6vnr/8b934cNDgAAACDPgAMAAADIM+AAAAAA8nwHx2InfYcCn3fe/bnyL/qG2y4fdla/n7P7V/9s9Xzq/dfV89c/+7DBAQAAAOTZ4FjsvL/A80mn3p9X/13fds/lw87q93N2/+qfrZ5Pvf+6ev76Zwc2OAAAAIA8GxyLnfoXeD7jG+7Po3/jDr3tQD7srH4/Z/ev/tnq+dT7r6vnr39WscEBAAAA5NngWOwb/gLPPO4PAADAjQ0OAAAAIO93dQOcb/aWwefZawAAANiNDQ4AAAAgzwYHU5y3tXHv77/OTsc89W+xrvc/m3zG/ArGWvV86v3PJp+x+vNHffX5TjY4AAAAgDy/orLYeb+Ccfbuxth5aa96Prz679rtOVbvfzb5jM3OR/5j9Xzq/c8mn7H680d99a/U5ww2OAAAAIA8GxyLnfQX+G/e3bh3UuatnZQdnmb1/meTz9jsfOQ/Vs+n3v9s8hmrP3/UV/9KfU5igwMAAADIs8Gx2Bl/gbe78dcZyRe3USrfG/LIqc9k+YzNzkf+Y/V86v3PJp+x+vNHffWv1Oc8NjgAAACAPAMOAAAAIM+AAwAAAMjzHRyL1b9DwbdvjNXz736TSPHbQ+6d9GSWz9jsfOQ/Vs+n3v9s8hmrP3/UV/9KfU5lgwMAAADIM+AAAAAA8gw4AAAAgDwDDgAAACDPgAMAAADIM+AAAAAA8gw4AAAAgLwfvwa81oxfeL43+3xn919Xz/+Tz4d3/VtWPdPq/c8mn7HZ+ch/rJ5Pvf/Z5DNWf/6or/6V+pzHBgcAAACQZ8ABAAAA5BlwAAAAAHm+g2Ox+nco+A6OsXr+n38+XPkX7fA0q/c/m3zGZucj/7F6PvX+Z5PPWP35o776V+pzEhscAAAAQJ4NjsXqf4G3wTFWz7/yiwC7Pcfq/c8mn7HZ+ch/rJ5Pvf/Z5DNWf/6or/6V+pzBBgcAAACQZ4Njsfpf4G1wjNXz3+H58OjfuENvz6j3P5t8xmbnI/+xej71/meTz1j9+aO++nwnGxwAAABAng2Oxep/gbfBMVbP3/MBAACosMEBAAAA5BlwAAAAAHkGHAAAAEDe7+oGAE5W/xZx31K+Vv183R+uqN9P938t+cN3ssEBAAAA5PkVlcXqv4LhV1TG6vl7PvybV8/l1Zzr9Rmrn6/7wxX1++n+ryV/wAYHAAAAkGeDY7H6X+BtcIzV8/d8eNWVE3km7Xp9xurn6/5wRf1+uv9ryR+4scEBAAAA5NngWKz+F3gbHGP1/D0fnveus3iUeb0+Y/XzdX+4on4/3f+15A/cs8EBAAAA5BlwAAAAAHkGHAAAAECe7+BYrP4dCr6DY6yev+fDM2acwn3y9fqM1c/X/eGK+v10/9eSP/CXDQ4AAAAgz4ADAAAAyDPgAAAAAPIMOAAAAIA8Aw4AAAAgz4ADAAAAyDPgAAAAAPJ+/NrzWjN+wfve7POd3X9dPX/Ph+e96yweZV6vz1j9fN0frqjfT/d/LfkD92xwAAAAAHkGHAAAAECeAQcAAACQ5zs4Fqt/h4Lv4Bir5+/58KorJ/JM2vX6jNXP1/3hivr9dP/Xkj9wY4MDAAAAyLPBsVj9L/A2OMbq+Xs+/JtXz+XVnOv1Gaufr/vDFfX76f6vJX/ABgcAAACQZ4Njsfpf4G1wjNXz93y47tEZvSvben3G6ufr/nBF/X66/2vJH76TDQ4AAAAgzwbHYvW/wNvgGKvn7/kAAABU2OAAAAAA8gw4AAAAgDwDDgAAACDvd3UDACfzLe5jfsVgTP9r68+m/7X16+QzJp+zOV8escEBAAAA5PkVlcXqv4LhV1TG6vl7PvybV8/l23KenU89f/2vrT+b/tfWr5PPmHzO5nx5hg0OAAAAIM8Gx2L1v8Db4Bir5+/58KorJ/INac/Op56//tfWn03/a+vXyWdMPmdzvjzPBgcAAACQZ4Njsfpf4G1wjNXz93x43rvO4tTMZ+dTz1//N8537NT+6/nMJp8x+ZzN+fIqGxwAAABAngEHAAAAkGfAAQAAAOT5Do7F6t+h4Ds4xur5ez48Y8YpnJT87Hzq+ev/L+c7dlL/9Xxmk8+YfM7mfPk3NjgAAACAPAMOAAAAIM+AAwAAAMgz4AAAAADyDDgAAACAvN/VDdB2+y5iv6Xyl29pBgAA+CQbHAAAAEDej78zrzV79+Ez52uD468zkvd8eN67zuLUzGfnU89f/zfOd+zU/uv5zCafMfmczfnyKhscAAAAQJ7v4IA3MyEGAAD4PBscAAAAQJ7v4FjspO9Q8E0cNydl7vnwqisn8g1pz86nnr/+19afTf9r69fJZ0w+Z3O+PM8GBwAAAJBng2Ox8/4C/817HOel7fnwb149l2/LeXY+9fz1v7b+bPpfW79OPmPyOZvz5Rk2OAAAAIA8GxyLnfoX+O/Z41j7Cjr1/pzk0RnJ9mZ2PvX89b+2/mz6X1u/Tj5j8jmb8+URGxwAAABAng2Oxb7hL/DnbXPskOrNN9wfAACAZ9jgAAAAAPJ+VzfA+WwBAAAAMJsNDgAAACDPBgfw1XwLN1fUf0VC/bX0fzb3fy35j9XzqefPPDY4AAAAgDy/orKYX8HgCvfn37ya26k58G9m3x/119afTf9nc//Xkv9YPZ96/nyGDQ4AAAAgzwbHYv4CzxXuz6uuJHZeGrxq9v1Rf2392fR/Nvd/LfmP1fOp588n2eAAAAAA8mxwLOYv8Fzh/jzvXVmdlAnPm31/1F9bfzb935z6/HT/15L/WD2fev58ng0OAAAAIM+AAwAAAMgz4AAAAADyfAfHYr5DgSvcn2fMSOmMZHjG7Puj/tr6s+n/r5Oen+7/WvIfq+dTz59VbHAAAAAAeQYcAAAAQJ4BBwAAAJD3u7oB5rp9es3nzc4z+9s3AAAAWmxwAAAAAHkGHAAAAECeAQcAAACQ9+PbGdb6zDcpOOWTfPLbN066Oe/K7aRMeN7s+6P+2vqz6f/m1Oen+7+W/Mfq+dTz5/NscAAAAAB5Bhxf4efnx49uAAAAcDADDgAAACDPd3As9vnFCife5bZcdyXD89LgVbPvj/pr68+m/7O5/2vJf6yeTz1/PskGBwAAAJBng2OxVV+N4dxb3JP3ejXPU3Pg38y+P+qvrT+b/s/m/q8l/7F6PvX8+QwbHAAAAECeDY7F1v64idPf2Q4/fPMNN+RRzt/wb+e62fdH/bX1Z9P/2dz/teQ/Vs+nnj/z2OAAAAAA8mxwLLbDX+lv3IQd7HMfbtwKAACgwgYHAAAAkPe7ugF2sdvuAAAAADzPBgcAAACQZ4MD+Gr1b+HW/9n16+TDzur3s97/bPV89H92feaxwQEAAADk+RWVxXzzBTs79fnw6ututxz0f3b9Ovmws/r9rPc/Wz0f/Z9dn8+wwQEAAADk2eDYgj0OdnPqk+HKa22HTPR/dv06+bCz+v2s9z9bPR/9n12fT7LBAQAAAOTZ4NiCDQ52c96T4V2vslXJ6P/mUf/1+nXyYWf1+1nvf7Z6Pvq/8d933sUGBwAAAJBnwAEAAADkGXAAAAAAeb6DYyO+iYMdnPdMmPHK+mRK+v/rvv96/Tr5sLP6/az3P1s9H/3/5b/vXGeDAwAAAMgz4AAAAADyDDgAAACAvN/VDfD/3D615Zs4WMXnBgEAgC4bHAAAAECeDY7t2OPg8+xuAAAAdTY4AAAAgLwff7ndkw0OPukbngPvek2tykr/N4/6r9evkw87q9/Pev+z1fPR/43/vvMuNjgAAACAPN/BsSnfxMFnmDcDAABnsMEBAAAA5PkOjgzbHLzLN7/qr7yOdshN/2fXr5MPO6vfz3r/s9Xz0f/Z9fkkGxwAAABAng2OGHscXOH1fvPq62i33PR/dv06+bCz+v2s9z9bPR/9n12fz7DBAQAAAOTZ4AizzcEzvMbHHr2OKrnp/+z6dfJhZ/X7We9/tno++j+7PvPY4AAAAADybHAcxU4HXtEAAMB3ssEBAAAA5NngAAAAAPJscAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkGfAAQAAAOQZcAAAAAB5BhwAAABAngEHAAAAkPd/AMc9E1mMj6VvAAAAAElFTkSuQmCC"/><span>QR코드를 스캔하여 참여 신청하세요.</span></div><div class="apply-info"><small class="apply-label">로봇특성화대학 참여 신청</small><a class="apply-button" href="https://forms.gle/MyG3JE7T8VAcqQvu5" rel="noopener noreferrer" target="_blank">로봇특성화대학 참여 신청 <span aria-hidden="true">↗</span></a><p class="application-url">forms.gle/MyG3JE7T8VAcqQvu5</p></div><div class="contact contact-panel"><small>문의처</small><h3>광운대학교<br>로봇특성화대학사업단</br></h3><div class="contact-item"><span>전화</span><a href="tel:029405755">02-940-5755~5756</a></div><div class="contact-item"><span>이메일</span><a href="mailto:ai.robot@kw.ac.kr">ai.robot@kw.ac.kr</a></div></div></div><div class="final-message">로봇과 Physical AI의 미래를 <b>광운대학교에서 시작하세요.</b></div></div></div></section></div><div class="controls"><button id="prev">‹</button><div class="progress"><i id="bar"></i></div><button id="next">›</button></div><div class="hint">← → 방향키 · Space로 탐색 · F 전체화면</div><script>const slides=[...document.querySelectorAll('.slide')];let idx=0;function show(n){idx=(n+slides.length)%slides.length;slides.forEach((s,i)=>s.classList.toggle('active',i===idx));document.getElementById('bar').style.width=((idx+1)/slides.length*100)+'%';location.hash='slide-'+(idx+1)}document.getElementById('prev').onclick=()=>show(idx-1);document.getElementById('next').onclick=()=>show(idx+1);addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();show(idx+1)}if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){e.preventDefault();show(idx-1)}if(e.key==='Home')show(0);if(e.key==='End')show(slides.length-1);if(e.key.toLowerCase()==='f')document.documentElement.requestFullscreen?.()});const m=location.hash.match(/slide-(\d+)/);if(m)idx=Math.max(0,Math.min(slides.length-1,Number(m[1])-1));show(idx);</script></body></html>
